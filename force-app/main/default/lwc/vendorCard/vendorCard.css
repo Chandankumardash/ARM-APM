@@ -1,0 +1,122 @@
+.version-list{
+    background-color: #ecf0f2; 
+}
+.version-list li{
+    padding: 15px;
+    border: 1px solid #edeeef;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #ffffff; 
+    position: relative;
+    cursor: pointer;
+}
+.version-list li:last-child{
+    margin-bottom: 0;
+}
+.version-list li h3{
+    color: #0687eb;
+    /* font-weight: 400;
+    font-size: 16px;*/
+    margin-bottom: 8px; 
+}
+.version-list li .link{
+    margin-left: 20px;
+}
+.version-list li:hover{
+    background:#e9f6ff;
+    border: 1px solid #4786ff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
+    
+}
+.white-icon{
+    --lwc-colorTextIconDefault: white !important;
+}
+
+.badge-semi-blue{
+    border-radius: 15px !important;
+    padding: 0 15px;
+    background: #1464f6;
+    float: right;
+    display: block;
+    color: #ffffff;
+    margin-top: 22px;
+}
+
+
+.badge-semi-red{
+    border-radius: 15px !important;
+    padding: 0 15px;
+    background: #c90c0c;
+    float: right;
+    display: block;
+    color: #ffffff;
+    margin-top: 22px;
+}
+
+.badge-semi-green{
+    border-radius: 15px !important;
+    background: #72bb53;
+    color: #ffffff;
+    font-size: 9px;
+}
+.badge-semi-orrange{
+    border-radius: 15px !important;
+    background: #ffa834;
+    color: #ffffff;
+    font-size: 9px;
+}
+
+.inner-span-set {
+    display: inline-block;
+    width:25% !important;
+}
+.icon-label {
+    border-radius: 50% !important;
+    margin: 0px auto;
+    font-size: 20px;
+    background: #3d8af7;
+    justify-content: center;
+    color: #ffffff;
+    width: 70px;
+    height: 70px;
+}
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+
+.inner-span-set-capability {
+    display: inline-block;
+    width:90% !important;
+    margin-top: 16px;
+}
+.version-text, .document-type-text {
+    padding-right: 10px;
+    /* font-size: 18px;
+    font-weight: 520; */
+    color: black;
+}
+
+.mainNavItem {
+    color: #ffffff;;
+    font-size: 16px;
+}
+
+
+.approved-label{
+    /* font-size:13px; */
+    color: #999999;   
+}
+.header-title {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.header-title, .description-body{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}

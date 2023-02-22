@@ -1,0 +1,7 @@
+<apex:page standardController="Employee__c" >
+  <script>
+    if({!Employee__c.status__c != 'abc'}){
+        alert('this status is not abs');
+        }
+    </script>s
+</apex:page>

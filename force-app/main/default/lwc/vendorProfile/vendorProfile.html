@@ -1,0 +1,295 @@
+<template>
+    <div class="profile-heading">
+        <div class = "slds-grid slds-wrap">
+            <div class="slds-col slds-large-size_2-of-12  slds-medium-size_2-of-12 slds-size_12-of-12 text-center">
+                <div class="profile-icon">
+                    <img src={buildingIcon} width=60 height=60 style="text-align: left;"> 
+                </div>
+                <p class="body4_regular description-body " style=" margin-top: 10px; color: rgb(50, 205, 120)"><lightning-icon icon-name="utility:check" class="blue-icon" size="x-small">
+                </lightning-icon> Active</p>
+            </div>
+            <div class="slds-col slds-large-size_10-of-12  slds-medium-size_10-of-12 slds-size_12-of-12">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-large-size_1-of-1  slds-medium-size_1-of-1 slds-size_12-of-12">
+                        <div >
+                            <img src={blueStar} width=15 height=15 style="float: right;" >
+                            <img src={blueStar} width=15 height=15 style="float: right;" >
+                            <img src={blueStar} width=15 height=15 style="float: right;" >
+                            <img src={blueStar} width=15 height=15 style="float: right;" >
+                            <img src={blueStar} width=15 height=15 style="float: right;" >
+                        </div>
+                        <h3 class="header-title body4_regular" style="font-size: 20px;">{company.name}</h3>
+                        <p class="body4_regular">{company.type}</p>
+                        <p class="body4_regular">Regd#: ABCD12345</p>
+                        <p class="body4_regular"><lightning-icon icon-name="utility:checkin" class="white-icon" size="x-small"></lightning-icon>&nbsp; 450 St Brand Brooklyn, San Diego County, CA 91905, USA</p>
+                        <div>
+                            <span class="body4_regular"><lightning-icon icon-name="utility:call" class="white-icon" size="x-small"></lightning-icon> &nbsp;&nbsp;{company.mobile}</span>&nbsp;&nbsp;
+                            <span class="body4_regular"><lightning-icon icon-name="utility:user" size="x-small"></lightning-icon>&nbsp;{company.primeryMember}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile-details">
+        <ul class="ul-tab">
+            <template if:true={profilePage}>
+                <li class="tab-active" onclick={handleProfileClick}>PROFILE</li>
+            </template>
+            <template if:false={profilePage}>
+                <li onclick={handleProfileClick}>PROFILE</li>
+            </template>
+            <template if:true={contantInfoPage}>
+                <li class="tab-active" onclick={handleContantInfoClick}>CONTACT INFO</li>
+            </template>
+            <template if:false={contantInfoPage}>
+                <li onclick={handleContantInfoClick}>CONTACT INFO</li>
+            </template>
+            <template if:true={productServicesPage}>
+                <li class="tab-active" onclick={handleProductServiceClick}>PRODUCT & SERVICES</li>
+            </template>
+            <template if:false={productServicesPage}>
+                <li onclick={handleProductServiceClick}>PRODUCT & SERVICES</li>
+            </template>
+            <template if:true={scorePage}>
+                <li class="tab-active" onclick={handleScoreClick}>SCORE</li>
+            </template>
+            <template if:false={scorePage}>
+                <li onclick={handleScoreClick}>SCORE</li>
+            </template>
+            <template if:true={incidentPage}>
+                <li class="tab-active" onclick={handleIncidentClick}>INCIDENT</li>
+            </template>
+            <template if:false={incidentPage}>
+                <li onclick={handleIncidentClick}>INCIDENT</li>
+            </template>
+        </ul>
+    </div>
+    <template if:true={profilePage}>
+        <div class="profile-details">
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Registered Name: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>--------------</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Trading Name: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>--------------</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>NCAIS Code: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>--------------</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Headquarter Address:</p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>450 St Brand Brooklyn, San Diego County, CA 91905, USA</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Headquarter Phone: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>888-555-1212</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Operational Location: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>450 St Brand Brooklyn, San Diego County, CA 91905, USA</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x ">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Website: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4" style="text-overflow: ellipsis; color: rgb(4, 110, 229); white-space: nowrap; overflow: hidden;">
+                    <span >www.successconstruction.com</span>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Supplier’s GLN:</p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>--------------</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Current Contract Period: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>12/24/2022   to   12/24/2023</p>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template if:true={contantInfoPage}>
+        <div class="profile-details">
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Point of Contact Name: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>Larry Bartlett</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Job Position: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>Operation Manager</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Email: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>larry.bartlett@gmail.com</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Phone:</p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>888-555-1212</p>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template if:true={scorePage}>
+        <div class="profile-details">
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Swot Score:</p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>86</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Overall Score: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>87</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Competitive Position: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>5</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Company Execution Score:</p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>54</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Competitive Rank: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>Strong Competitor</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Operational Capability Score: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <p>89</p>
+                </div>
+            </div>
+            <div class = "slds-grid mb-5x ">
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4 text-left">
+                    <p>Risk Level: </p>
+                </div>
+                <div class="slds-col slds-large-size_2-of-4  slds-medium-size_2-of-4 slds-size_2-of-4">
+                    <span >0</span>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template if:true={incidentPage}>
+        <div class = "slds-grid">
+            <div class="slds-col slds-large-size_12-of-12  slds-medium-size_12-of-12 slds-size_12-of-12 ">
+               <div class="inline-table">
+                <table class="slds-table slds-table_cell-buffer slds-no-row-hover slds-table_bordered">
+                    <thead style="color:#00a4e0">
+                    <tr class="slds-line-height_reset">
+                        <th scope="col">
+                        <div class="slds-truncate" title="Name">Incident Name</div>
+                        </th>
+                        <th scope="col">
+                        <div class="slds-truncate" title="date">Date</div>
+                        </th>
+                        <th scope="col">
+                            <div class="slds-truncate" title="responsible">Responsible Person</div>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <template for:each={incidents} for:item="incident">
+                        <tr class="slds-hint-parent" key={incident.Id}>
+                            <td >
+                                <div class="slds-truncate" >{incident.name}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" > <lightning-formatted-date-time value={incident.date}></lightning-formatted-date-time></div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate" >{incident.responsiblePerson}</div>
+                            </td>
+                        </tr>
+                    </template>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </template>
+    <template if:true={productServicesPage}>
+        <ul class="version-list">
+            <template for:each={products} for:item="product">
+                <li key={product.Id} class="slds-m-right_none">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_8-of-12">
+                            <h4  style="font-size: 20px;">{product.name}</h4>
+                            <span>{product.requestedUser}&nbsp;{product.date}</span>
+                        </div>
+                        <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_4-of-12 text-right">
+                            <span>Status: <b>{product.status}</b></span>
+                        </div>
+                    </div>
+                </li>
+            </template>
+        </ul>
+    </template>
+</template>

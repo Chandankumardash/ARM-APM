@@ -1,0 +1,164 @@
+<template>
+    <div class="profile-details">
+        <div class = "slds-grid slds-wrap">
+            <div class="slds-col slds-large-size_2-of-12  slds-medium-size_2-of-12 slds-size_12-of-12 text-center">
+                <div class="profile-icon">
+                    <img src={buildingIcon} width=60 height=60 style="text-align: left;"> 
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_12-of-12">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-large-size_8-of-12 slds-medium-size_8-of-12 slds-size_7-of-12">
+                        <h3 class="header-title body4_regular" style="font-size: 20px;">{company.name}</h3>
+                        <p class="body4_regular type-label">{company.type}</p>
+                        <p class="body4_regular description-body">Qualified on: <lightning-formatted-date-time value={company.qualifiedDate}></lightning-formatted-date-time></p>
+                        <p class="body4_regular"><lightning-icon icon-name="utility:user" size="x-small"></lightning-icon>&nbsp;{company.primeryMember}</p>
+                    </div>
+                    <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_5-of-12 text-right">
+                        <template if:true={company.status}>
+                            <p class="body4_regular description-body " style=" margin-top: 10px; color: rgb(15, 48, 233)"><lightning-icon icon-name="utility:check" class="blue-icon" size="x-small">
+                            </lightning-icon> Active</p>
+                        </template>
+                        <p class="body4_regular ">Sipplier# {company.supplier}</p>
+                        <p class="body4_regular ">Overall Score: {company.score}</p>
+                        <p class="body4_regular badge-semi-blue"><lightning-icon icon-name="utility:call" class="white-icon" style="color:white" size="x-small"></lightning-icon>&nbsp;{company.mobile}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="middle-card-details">
+        <div class = "slds-grid slds-wrap">
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3 ">
+                <div class={cardDetailsStyle} onclick={handelAlertClick}>
+                    <div class = "slds-grid">
+                        <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12 ">
+                            <div class="middle-icon-label">
+                                <img src={bellIcon} width=30 height=30 style="text-align: left;"> 
+                            </div>
+                        </div>
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_6-of-12">
+                            <h3 class="middle-card-data">4</h3>
+                            <p class="middle-card-label">Alerts</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details">
+                    <div class = "slds-grid">
+                        <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
+                            <div class="middle-icon-label">
+                                <img src={paperIcon} width=30 height=30 style="text-align: left;"> 
+                            </div>
+                        </div>
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_6-of-12">
+                            <h3 class="middle-card-data">4</h3>
+                            <p class="middle-card-label">Work Orders</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details">
+                    <div class = "slds-grid">
+                        <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
+                            <div class="middle-icon-label">
+                                <img src={userIcon} width=30 height=30 style="text-align: left;"> 
+                            </div>
+                        </div>
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_6-of-12">
+                            <h3 class="middle-card-data">3</h3>
+                            <p class="middle-card-label">Onsite</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <template if:true={alertSection}>
+        <div class="profile-details">
+            <div>
+                <lightning-icon icon-name="utility:chevrondown" style="float: right;"  size="x-small"></lightning-icon>
+            </div>
+            <ul>
+                <template for:each={alerts} for:item="alert">
+                    <li key={alert.Id} class="slds-m-right_none middle-icon-allignmet">
+                        <img src={starIcon} width=15 height=15 class="image-allignment"><span>{alert.message}</span><span style="color:red; margin-left: 10px">{alert.number} </span>
+                    </li>
+                </template>
+            </ul>
+        </div>
+    </template>
+    <div class="separator-line">&nbsp;</div>
+    <div class="middle-card-details">
+        <div class = "slds-grid">
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details mb-10" onclick={nextPage}>
+                    <h3 slot="title">
+                        <img src={profileIcon} width=30 height=30><p>Vender Profile</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={insuranceIcon} width=30 height=30><p>Insurance</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={policyIcon} width=30 height=30><p>Policies & Procedures</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={safetyIcon} width=30 height=30><p>Safety</p> 
+                    </h3>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={employeeIcon} width=30 height=30><p>Employees</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={licenseIocn} width=30 height=30><p>Licenses & Certification</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={trainingIcon} width=30 height=30><p>Training</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={alertsIcon} width=30 height=30><p>Public Alerts</p>
+                    </h3>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={clockIcon} width=30 height=30><p>Approval History</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={contractsIcon} width=30 height=30><p>Contracts</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={clockIcon} width=30 height=30><p>Work History</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={auditIcon} width=30 height=30><p>Vendor Audits</p>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

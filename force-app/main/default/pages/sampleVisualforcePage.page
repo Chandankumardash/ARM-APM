@@ -1,0 +1,14 @@
+<apex:page >
+  
+  <apex:includeScript value="{!$Resource.docusign}"/>
+    <div id="ds-terms-of-service"></div>
+    <script src="https://demo.docusign.net/clickapi/sdk/latest/docusign-click.js"></script>
+   
+
+    <script>docuSignClick.Clickwrap.render({
+    environment: 'https://demo.docusign.net',
+    accountId: '3c2229a4-1ba4-439a-af6d-52cfcee17468',
+    clickwrapId: '5f755e44-f47e-4ac1-8e3d-4d80e440bcc5',
+    clientUserId: 'abcd@gmail.com'
+    '#ds-terms-of-service');</script>  
+</apex:page>

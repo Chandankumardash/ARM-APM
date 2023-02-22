@@ -1,0 +1,40 @@
+.heading{
+    color: white;
+    text-align: center;
+    font-size: 48px;
+    font-weight: 600;
+}
+.customer-card {
+    background-color: #008db1;
+    border-radius: 8px;
+    color: white;
+    font-size: 24px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.customer-icon{
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: 8px 0 0 8px;
+    background-color: #00718e;
+}
+.supplier-card {
+    background-color: #9c2ab7;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 8px;
+    color: white;
+    font-size: 24px;
+    padding: 0 8px 15px 8px;
+}
+.new-supplier-card {
+    background-color: #7e2299;
+    border-radius: 8px;
+    border: #ae39c9 1px solid;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin: 0 7px;
+    padding: 15px;
+}
