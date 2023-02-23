@@ -3,6 +3,7 @@
     text-align: center;
     font-size: 48px;
     font-weight: 600;
+    margin-top: 30%;
 }
 .customer-card {
     background-color: #008db1;
@@ -27,6 +28,7 @@
     color: white;
     font-size: 24px;
     padding: 0 8px 15px 8px;
+    margin-bottom: 40%;
 }
 .new-supplier-card {
     background-color: #7e2299;
