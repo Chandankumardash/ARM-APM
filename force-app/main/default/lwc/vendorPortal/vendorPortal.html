@@ -1,0 +1,68 @@
+<template>
+    <div class="profile-details">
+        <div class = "slds-grid slds-wrap">
+            <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12">
+                <h3 class="header-title body4_regular" style="font-size: 20px;">{name}</h3>
+                <p class="body4_regular type-label">{type}</p>
+            </div>
+        </div>
+    </div>
+    <div class="middle-card-details">
+        <div class = "slds-grid">
+            <div class="slds-col slds-large-size_2-of-4 slds-medium-size_2-of-4 slds-size_2-of-4">
+                <div class="card-details mb-10" onclick={nextPage}>
+                    <h3 slot="title">
+                        <img src={userIcon} width=30 height=30><p>Vender Check In</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={paperIcon} width=30 height=30><p>Approved Vendors</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={bellIcon} width=30 height=30><p>Alerts</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={auditIcon} width=30 height=30><p>Onsite Evalution</p> 
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={auditIcon} width=30 height=30><p>Search Vendors</p> 
+                    </h3>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_2-of-4 slds-medium-size_2-of-4 slds-size_2-of-4">
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={paperIcon} width=30 height=30><p>Work Orders</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={clockIcon} width=30 height=30><p>Approval Management</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={trainingIcon} width=30 height=30><p>Vendor Location</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={alertsIcon} width=30 height=30><p>Vendor Scorecard</p>
+                    </h3>
+                </div>
+                <div class="card-details mb-10">
+                    <h3 slot="title">
+                        <img src={auditIcon} width=30 height=30><p>Incident</p> 
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
