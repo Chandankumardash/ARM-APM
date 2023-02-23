@@ -99,8 +99,11 @@
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
     
 }
+.green-icon{
+    --lwc-colorTextIconDefault: rgb(50, 205, 120);
+}
 .blue-icon{
-    --lwc-colorTextIconDefault: rgb(15, 48, 233);
+    --lwc-colorTextIconDefault: #3d8af7;
 }
 .white-icon{
     --lwc-colorTextIconDefault:white;
@@ -195,6 +198,14 @@
     width: 40px;
     margin-top: 5px;
     height: 40px;
+}
+
+.back-button {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 50% !important;
+    background: #4dd7fa;
 }
 
 .separator-line {

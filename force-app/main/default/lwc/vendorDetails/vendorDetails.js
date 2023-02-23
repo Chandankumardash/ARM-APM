@@ -18,6 +18,9 @@ import audit_icon from "@salesforce/resourceUrl/auditIcon"
 import building_icon from "@salesforce/resourceUrl/buildingIcon"
 
 export default class VendorDetails extends NavigationMixin(LightningElement) {
+    vendorDetailsPage = true;
+    vendorProfilePage = false;
+    vendorContractPage = false;
     company = 
         {
             "Id": "1234",   
@@ -79,13 +82,29 @@ export default class VendorDetails extends NavigationMixin(LightningElement) {
         }
     }
 
-    nextPage() {
-        this[NavigationMixin.Navigate]({
-            type: 'comm__namedPage',
-            attributes: {
-                name: 'vendorProfile__c'
-            }
-        }, true);
+    handelVendorProfilePage() {
+        this.vendorDetailsPage = false;
+        this.vendorProfilePage = true
+    }
+    handelVendorProfileBack(event){
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.vendorProfilePage = false;
+        }
+    }
+    handelVendorContractPage() {
+        this.vendorDetailsPage = false;
+        this.vendorContractPage = true;
+    }
+    handelVendorContractBack(event) {
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.vendorContractPage = false;
+        }
+    }
+
+    handelback(){
+        this.dispatchEvent(new CustomEvent('click', {detail: "back"}));
     }
 
     // renderedCallback() {

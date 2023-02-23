@@ -2,6 +2,7 @@ import { LightningElement } from 'lwc';
 import paper_icon from "@salesforce/resourceUrl/paperIcon"
 
 export default class Contracts extends LightningElement {
+
     paperIcon = paper_icon;
     contracts = [
         {
@@ -26,4 +27,8 @@ export default class Contracts extends LightningElement {
             "overdue": true,
         },
     ]
+
+    handelContractsBack(){
+        this.dispatchEvent(new CustomEvent('click', {detail: "back"}));
+    }
 }

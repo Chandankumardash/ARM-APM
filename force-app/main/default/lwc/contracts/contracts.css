@@ -71,3 +71,11 @@
     color: #434b52;
     margin-bottom: 5px;
 }
+
+.back-button {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 50% !important;
+    background: #4dd7fa;
+}

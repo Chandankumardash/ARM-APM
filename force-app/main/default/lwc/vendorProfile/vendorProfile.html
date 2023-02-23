@@ -1,29 +1,37 @@
 <template>
+    <div class="back-button" onclick={handelback}>
+        <lightning-icon style="padding: 5px" icon-name="utility:back" size="x-medium"></lightning-icon>
+    </div>
     <div class="profile-heading">
         <div class = "slds-grid slds-wrap">
             <div class="slds-col slds-large-size_2-of-12  slds-medium-size_2-of-12 slds-size_12-of-12 text-center">
                 <div class="profile-icon">
                     <img src={buildingIcon} width=60 height=60 style="text-align: left;"> 
                 </div>
-                <p class="body4_regular description-body " style=" margin-top: 10px; color: rgb(50, 205, 120)"><lightning-icon icon-name="utility:check" class="blue-icon" size="x-small">
+                <p class="body4_regular description-body " style=" margin-top: 10px; color: rgb(50, 205, 120)"><lightning-icon icon-name="utility:check" class="green-icon" size="x-small">
                 </lightning-icon> Active</p>
             </div>
             <div class="slds-col slds-large-size_10-of-12  slds-medium-size_10-of-12 slds-size_12-of-12">
                 <div class="slds-grid slds-wrap">
                     <div class="slds-col slds-large-size_1-of-1  slds-medium-size_1-of-1 slds-size_12-of-12">
                         <div >
+                            <lightning-icon icon-name="utility:favorite" style="float: right;" size="x-small" class="blue-icon"></lightning-icon>
+                            <lightning-icon icon-name="utility:favorite" style="float: right;" size="x-small" class="blue-icon"></lightning-icon>
+                            <lightning-icon icon-name="utility:favorite" style="float: right;" size="x-small" class="blue-icon"></lightning-icon>
+                            <lightning-icon icon-name="utility:favorite" style="float: right;" size="x-small" class="blue-icon"></lightning-icon>
+                            <lightning-icon icon-name="utility:favorite" style="float: right;" size="x-small" class="blue-icon"></lightning-icon>
+                            <!-- <img src={blueStar} width=15 height=15 style="float: right;" >
                             <img src={blueStar} width=15 height=15 style="float: right;" >
                             <img src={blueStar} width=15 height=15 style="float: right;" >
                             <img src={blueStar} width=15 height=15 style="float: right;" >
-                            <img src={blueStar} width=15 height=15 style="float: right;" >
-                            <img src={blueStar} width=15 height=15 style="float: right;" >
+                            <img src={blueStar} width=15 height=15 style="float: right;" > -->
                         </div>
                         <h3 class="header-title body4_regular" style="font-size: 20px;">{company.name}</h3>
                         <p class="body4_regular">{company.type}</p>
                         <p class="body4_regular">Regd#: ABCD12345</p>
-                        <p class="body4_regular"><lightning-icon icon-name="utility:checkin" class="white-icon" size="x-small"></lightning-icon>&nbsp; 450 St Brand Brooklyn, San Diego County, CA 91905, USA</p>
+                        <p class="body4_regular"><lightning-icon icon-name="utility:checkin" size="x-small"></lightning-icon>&nbsp; 450 St Brand Brooklyn, San Diego County, CA 91905, USA</p>
                         <div>
-                            <span class="body4_regular"><lightning-icon icon-name="utility:call" class="white-icon" size="x-small"></lightning-icon> &nbsp;&nbsp;{company.mobile}</span>&nbsp;&nbsp;
+                            <span class="body4_regular"><lightning-icon icon-name="utility:call" size="x-small"></lightning-icon> &nbsp;&nbsp;{company.mobile}</span>&nbsp;&nbsp;
                             <span class="body4_regular"><lightning-icon icon-name="utility:user" size="x-small"></lightning-icon>&nbsp;{company.primeryMember}</span>
                         </div>
                     </div>

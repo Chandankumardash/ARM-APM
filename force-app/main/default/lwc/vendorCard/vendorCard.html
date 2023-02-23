@@ -1,58 +1,66 @@
 <template>
-    <ul class="version-list">
-        <template for:each={companies} for:item="company">
-            <li key={company.Id} class="slds-m-right_none">
-                <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;" onclick={nextPage}>
-                    <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_12-of-12 text-center" >
-                        <lightning-badge label={company.shortName__c} class="icon-label"></lightning-badge>
+    <template if:true={vendorCardPage}>
+        <div class="back-button" onclick={handelback}>
+            <lightning-icon style="padding: 5px" icon-name="utility:back" size="x-medium"></lightning-icon>
+        </div>
+        <ul class="version-list">
+            <template for:each={companyList} for:item="company">
+                <li key={company.Id} class="slds-m-right_none">
+                    <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;" onclick={nextPage}>
+                        <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_12-of-12 text-center" >
+                            <lightning-badge label={company.shortName} class="icon-label"></lightning-badge>
+                        </div>
+                        <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_12-of-12" >
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-large-size_8-of-12 slds-medium-size_8-of-12 slds-size_8-of-12">
+                                    <h3  style="font-size: 20px;">{company.name}</h3>
+                                    <span >Score: &nbsp;<b>{company.score}</b>
+                                    </span>
+                                    <span class="slds-m-left_small">Onsite: &nbsp;<b>{company.onsite}</b>
+                                    </span>
+                                    <p class="body4_regular approved-label">Approved By {company.approvedByType} ({company.approvedByUser})</p>
+                                </div>
+                                <div class="slds-col slds-large-size_4-of-12  slds-medium-size_4-of-12 slds-size_4-of-12 text-right">
+                                    <div class="body4_regular"><lightning-formatted-date-time value={company.date}></lightning-formatted-date-time></div>
+                                        <template if:true={company.status}>
+                                            <span class="body4_regular badge-semi-blue"><lightning-icon icon-name="utility:check" class="white-icon" size="x-small">
+                                            </lightning-icon> Active</span>
+                                        </template>
+                                        <template if:false={company.status}>
+                                            <p class="body4_regular description-body badge-semi-red" style="margin-top: 24px"><lightning-icon icon-name="utility:close" class="white-icon" size="x-small">
+                                            </lightning-icon> In Active</p>
+                                        </template>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-wrap">
+                                <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
+                                    <span>Safety: &nbsp;
+                                        <lightning-badge label={company.safety} class={company.isSafety}></lightning-badge>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
+                                    <span>Quality: &nbsp;
+                                        <lightning-badge label={company.quality} class={company.isQuality}></lightning-badge>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
+                                    <span>Budget: &nbsp;
+                                        <lightning-badge label={company.budget} class={company.isBudget}></lightning-badge>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
+                                    <span>Capability: &nbsp;
+                                        <lightning-badge label={company.capability} class={company.isCapability}></lightning-badge>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>    
                     </div>
-                    <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_12-of-12" >
-                        <div class="slds-grid slds-wrap">
-                            <div class="slds-col slds-large-size_8-of-12 slds-medium-size_8-of-12 slds-size_8-of-12">
-                                <h3  style="font-size: 20px;">{company.Name__c}</h3>
-                                <span >Score: &nbsp;<b>{company.Score__c}</b>
-                                </span>
-                                <span class="slds-m-left_small">Onsite: &nbsp;<b>{company.On_Site_Employee__c}</b>
-                                </span>
-                                <p class="body4_regular approved-label">Approved By {company.Approved_Type__c} ({company.Approved_By__c})</p>
-                            </div>
-                            <div class="slds-col slds-large-size_4-of-12  slds-medium-size_4-of-12 slds-size_4-of-12 text-right">
-                                <div class="body4_regular"><lightning-formatted-date-time value={company.Opening_Date__c}></lightning-formatted-date-time></div>
-                                    <template if:true={company.Status__c}>
-                                        <span class="body4_regular badge-semi-blue"><lightning-icon icon-name="utility:check" class="white-icon" size="x-small">
-                                        </lightning-icon> Active</span>
-                                    </template>
-                                    <template if:false={company.Status__c}>
-                                        <p class="body4_regular description-body badge-semi-red" style="margin-top: 24px"><lightning-icon icon-name="utility:close" class="white-icon" size="x-small">
-                                        </lightning-icon> In Active</p>
-                                    </template>
-                            </div>
-                        </div>
-                        <div class="slds-grid slds-wrap">
-                            <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
-                                <span>Safety: &nbsp;
-                                    <lightning-badge label={company.Safety__c} class={company.isSafety}></lightning-badge>
-                                </span>
-                            </div>
-                            <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
-                                <span>Quality: &nbsp;
-                                    <lightning-badge label={company.Quality__c} class={company.isQuality}></lightning-badge>
-                                </span>
-                            </div>
-                            <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
-                                <span>Budget: &nbsp;
-                                    <lightning-badge label={company.Budget__c} class={company.isBudget}></lightning-badge>
-                                </span>
-                            </div>
-                            <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
-                                <span>Capability: &nbsp;
-                                    <lightning-badge label={company.Capability__c} class={company.isCapability}></lightning-badge>
-                                </span>
-                            </div>
-                        </div>
-                    </div>    
-                </div>
-            </li>
-        </template>
-    </ul>
+                </li>
+            </template>
+        </ul>
+    </template>
+    <template if:true={vendorDetailsPage}>
+        <c-vendor-details onclick={handleVendorDetailsBack}></c-vendor-details>
+    </template>
 </template>

@@ -2,7 +2,6 @@ import { LightningElement } from 'lwc';
 import bell_icon from "@salesforce/resourceUrl/bellicon"
 import user_icon from "@salesforce/resourceUrl/userIcon"
 import paper_icon from "@salesforce/resourceUrl/paperIcon"
-import star_icon from "@salesforce/resourceUrl/starIcon"
 import clock_icon from "@salesforce/resourceUrl/clockIcon"
 import employee_icon from "@salesforce/resourceUrl/employeeIcon"
 import profile_icon from "@salesforce/resourceUrl/profileIcon"
@@ -20,7 +19,6 @@ export default class VendorPortal extends LightningElement {
     bellIcon = bell_icon;
     userIcon = user_icon;
     paperIcon = paper_icon;
-    starIcon = star_icon;
     profileIcon = profile_icon;
     employeeIcon = employee_icon;
     clockIcon = clock_icon;
@@ -33,7 +31,20 @@ export default class VendorPortal extends LightningElement {
     alertsIcon =alerts_icon;
     auditIcon = audit_icon;
     buildingIcon = building_icon;
-    
+    vendorportalPage = true;
+    approvedVendorPage = false;
+
     name = "Troope Auto Manufacturing"
     type = "Automobile Manufacturing"
+
+    handelApprovedVendor() {
+        this.approvedVendorPage = true;
+        this.vendorportalPage = false;
+    }
+    handleVendorCardBack(event){
+        if (event.detail === 'back') {
+            this.approvedVendorPage = false;
+            this.vendorportalPage = true;
+        }
+    }
 }

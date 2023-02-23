@@ -19,7 +19,7 @@
     margin: 0 auto;
 }
 .middle-card-details {
-    border: 1px solid #edeeef;
+
     border-radius: 5px;
     margin-bottom: 10px;
     position: relative;
@@ -54,6 +54,14 @@
     height: 100px; 
     margin: 0 7px;
     background: #4085cb !important;
+}
+
+.back-button {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 50% !important;
+    background: #4dd7fa;
 }
 .middle-icon-allignmet {
     position: relative;
