@@ -1,0 +1,56 @@
+<template>
+    <div class="notification-card-details">
+        <div class = "slds-grid">
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details" onclick={nextPage}>
+                    <h3 slot="title">
+                       1
+                    </h3>
+                    <p>Current</p>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details">
+                    <h3 slot="title">
+                       1
+                    </h3>
+                    <p>Due Soon</p>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details">
+                    <h3 slot="title">
+                        1
+                    </h3>
+                    <p>Past Due</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="version-list">
+        <template for:each={contracts} for:item="contract">
+            <li key={contract.Id} class="slds-m-right_none">
+                <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;" onclick={nextPage}>
+                    <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_12-of-12 text-center" >
+                        <img src={paperIcon} width=30 height=30 style="text-align: left;">
+                    </div>
+                    <div class="slds-col slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-size_12-of-12" >
+                        <h3  style="font-size: 20px;">{contract.name}</h3>
+                        <span >Last Uploaded: &nbsp;<b>{contract.lastUpload}</b>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-size_12-of-12" >
+                        <template if:true={contract.overdue}>
+                            <p >Overdue</p>
+                        </template>
+                        <template if:false={contract.overdue}>
+                            <p >Current</p>
+                        </template>
+                        <span >Next Upload: &nbsp;<b>{contract.lastUpload}</b>
+                        </span>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </ul>
+</template>
