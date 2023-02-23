@@ -1,5 +1,5 @@
 .notification-card-details {
-    border: 1px solid #edeeef;
+    /* border: 1px solid #edeeef; */
     border-radius: 5px;
     margin-bottom: 10px;
     position: relative;
@@ -16,13 +16,13 @@
     text-align: center;
     text-overflow: ellipsis;
     cursor: pointer;
-    height: 100px; 
+    height: 90px; 
     margin: 0 7px;
     
 }
 
 .version-list{
-    background-color: #ecf0f2; 
+    /* background-color: #ecf0f2;  */
 }
 .version-list li{
     padding: 15px;
@@ -43,4 +43,31 @@
 }
 .text-center {
     text-align: center;
+}
+
+.tab-sub-content {
+    font-size: 14px;
+    color: #657d95;
+    font-weight: 500;
+}
+.tab-count {
+    font-size: 26px;
+    font-weight: 700;
+    color: #657d95;
+}
+.tab-current {
+    border-bottom: #72bb53 7px solid;
+}
+.tab-due-soon {
+    border-bottom: #ffb253 7px solid;
+}
+.tab-due-past {
+    border-bottom: #ff3823 7px solid;
+}
+
+.contract-card-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #434b52;
+    margin-bottom: 5px;
 }
