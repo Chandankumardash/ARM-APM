@@ -19,7 +19,7 @@
     margin: 0 auto;
 }
 .middle-card-details {
-    border: 1px solid #edeeef;
+    /* border: 1px solid #edeeef; */
     border-radius: 5px;
     margin-bottom: 10px;
     position: relative;
@@ -251,6 +251,17 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+}
+
+
+.card-details .card-titel { 
+    font-size: 18px;
+    font-weight: 600;
+}
+.card-details .card-sub-titel { 
+    font-size: 14px;
+    color: #959393;
+    font-style: italic;
 }
 
 @media only screen and (max-width: 480px) {
