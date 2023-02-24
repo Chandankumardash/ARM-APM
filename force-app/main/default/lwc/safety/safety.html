@@ -1,7 +1,6 @@
 <template>
-    <div onclick={handelContractsBack} style="font-size: x-large;">
+    <div onclick={handelContractsBack}>
         <lightning-icon icon-name="utility:back" size="x-medium" style="margin: 10px;"></lightning-icon>
-        <span>Contracts</span>
     </div>
     <div class="notification-card-details">
         <div class = "slds-grid" style="margin: 0 10px;">
@@ -45,15 +44,10 @@
                     </div>
                     <div class="slds-col slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-size_12-of-12" >
                         <template if:true={contract.overdue}>
-                            <template if:true={contract.past}>
-                                <p style="color: #ff3823"> 13 days Overdue</p>
-                            </template>
-                            <template if:false={contract.past}>
-                                <p style="color: #ffb253"> Due Soon</p>
-                            </template>
+                            <p >Overdue</p>
                         </template>
                         <template if:false={contract.overdue}>
-                            <p style="color: #72bb53">Current</p>
+                            <p >Current</p>
                         </template>
                         <span >Next Upload: &nbsp;<b>{contract.lastUpload}</b>
                         </span>

@@ -1,36 +1,26 @@
 import { LightningElement } from 'lwc';
 import bell_icon from "@salesforce/resourceUrl/bellicon"
-import user_icon from "@salesforce/resourceUrl/userIcon"
-import paper_icon from "@salesforce/resourceUrl/paperIcon"
-import clock_icon from "@salesforce/resourceUrl/clockIcon"
-import employee_icon from "@salesforce/resourceUrl/employeeIcon"
-import profile_icon from "@salesforce/resourceUrl/profileIcon"
-import insuranse_icon from "@salesforce/resourceUrl/insuranceIcon"
-import license_icon from "@salesforce/resourceUrl/licenseIocn"
-import contracts_icon from "@salesforce/resourceUrl/contractsIcon"
-import policy_icon from "@salesforce/resourceUrl/policyIcon"
-import training_icon from "@salesforce/resourceUrl/trainingIcon"
-import safety_icon from "@salesforce/resourceUrl/safetyIcon"
-import alerts_icon from "@salesforce/resourceUrl/alertsIcon"
-import audit_icon from "@salesforce/resourceUrl/auditIcon"
-import building_icon from "@salesforce/resourceUrl/buildingIcon"
+import circularUser from "@salesforce/resourceUrl/circularUser"
+import workOrders from "@salesforce/resourceUrl/workOrders"
+import approvedUser from "@salesforce/resourceUrl/approvedUser"
+import approval from "@salesforce/resourceUrl/approval"
+import location from "@salesforce/resourceUrl/location"
+import calculator from "@salesforce/resourceUrl/calculator"
+import scoreCard from "@salesforce/resourceUrl/scoreCard"
+import searchVendor from "@salesforce/resourceUrl/searchUser"
+import incident from "@salesforce/resourceUrl/incident"
 
 export default class VendorPortal extends LightningElement {
+    circularUser = circularUser;
+    workOrders = workOrders;
     bellIcon = bell_icon;
-    userIcon = user_icon;
-    paperIcon = paper_icon;
-    profileIcon = profile_icon;
-    employeeIcon = employee_icon;
-    clockIcon = clock_icon;
-    insuranceIcon = insuranse_icon;
-    licenseIocn = license_icon;
-    contractsIcon = contracts_icon;
-    policyIcon = policy_icon;
-    trainingIcon = training_icon;
-    safetyIcon = safety_icon;
-    alertsIcon =alerts_icon;
-    auditIcon = audit_icon;
-    buildingIcon = building_icon;
+    approvedUser=approvedUser;
+    approval = approval;
+    location = location
+    calculator = calculator;
+    scoreCard =scoreCard;
+    searchVendor =searchVendor;
+    incident = incident;
     vendorportalPage = true;
     approvedVendorPage = false;
 

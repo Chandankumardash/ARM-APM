@@ -1,7 +1,7 @@
 import { LightningElement } from 'lwc';
 import paper_icon from "@salesforce/resourceUrl/paperIcon"
 
-export default class Contracts extends LightningElement {
+export default class ChandanSafety extends LightningElement {
 
     paperIcon = paper_icon;
     contracts = [

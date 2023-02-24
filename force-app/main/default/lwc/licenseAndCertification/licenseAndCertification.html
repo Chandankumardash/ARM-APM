@@ -1,7 +1,7 @@
 <template>
     <div onclick={handelContractsBack} style="font-size: x-large;">
         <lightning-icon icon-name="utility:back" size="x-medium" style="margin: 10px;"></lightning-icon>
-        <span>Contracts</span>
+        <span>Locenses & Certifications</span>
     </div>
     <div class="notification-card-details">
         <div class = "slds-grid" style="margin: 0 10px;">
@@ -31,6 +31,28 @@
             </div>
         </div>
     </div>
+    <!-- <div class="version-list">
+        <ul class="ul-tab">
+            <div class = "slds-grid" style="margin: 0 10px;">
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-2">
+                    <template if:true={licenses}>
+                        <li class="tab-active" onclick={handleLicensesClick}>Licenses</li>
+                    </template>
+                    <template if:false={licenses}>
+                        <li onclick={handleLicensesClick}>Licenses</li>
+                    </template>
+                </div>
+                <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-2">
+                    <template if:true={certificate}>
+                        <li class="tab-active" onclick={handleCertificateClick}>Certificate</li>
+                    </template>
+                    <template if:false={certificate}>
+                        <li onclick={handleCertificateClick}>Certificate</li>
+                    </template>
+                </div>
+            </div>
+        </ul>
+    </div> -->
     <ul class="version-list">
         <template for:each={contracts} for:item="contract">
             <li key={contract.Id} >
@@ -40,23 +62,22 @@
                     </div>
                     <div class="slds-col slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-size_12-of-12" >
                         <h3 class="contract-card-title">{contract.name}</h3>
-                        <span >Last Uploaded: &nbsp;<b>{contract.lastUpload}</b>
-                        </span>
+                        <p class="mt-10">Last Uploaded: &nbsp;<b>{contract.lastUpload}</b>
+                        </p>
+                        <p class="mt-10">Expiration Date: &nbsp;<b>{contract.expirationDate}</b>
+                        </p>
+                        <p class="mt-10">Limits: &nbsp;<b style="color:#44a2f9">{contract.limits}</b>
+                        </p>
+
                     </div>
-                    <div class="slds-col slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-size_12-of-12" >
+                    <div class="slds-col slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-size_12-of-12 text-right" >
                         <template if:true={contract.overdue}>
-                            <template if:true={contract.past}>
-                                <p style="color: #ff3823"> 13 days Overdue</p>
-                            </template>
-                            <template if:false={contract.past}>
-                                <p style="color: #ffb253"> Due Soon</p>
-                            </template>
+                            <p style="color: #ff3823 " class="mt-10"> 10 days Overdue</p>
                         </template>
-                        <template if:false={contract.overdue}>
-                            <p style="color: #72bb53">Current</p>
-                        </template>
-                        <span >Next Upload: &nbsp;<b>{contract.lastUpload}</b>
-                        </span>
+                        <p class="mt-10">Next Upload: &nbsp;<b>{contract.lastUpload}</b>
+                        </p>
+                        <p class="mt-10">Effective Date: &nbsp;<b>{contract.effectiveDate}</b>
+                        </p>
                     </div>
                 </div>
             </li>
