@@ -164,6 +164,12 @@ export default class VendorDetails extends NavigationMixin(LightningElement) {
         this.safetyPage = true;
         this.vendorDetailsPage = false;
     }
+    handelSafetyBack(event) {
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.safetyPage = false;
+        }
+    }
 
     handelback(){
         this.dispatchEvent(new CustomEvent('click', {detail: "back"}));
