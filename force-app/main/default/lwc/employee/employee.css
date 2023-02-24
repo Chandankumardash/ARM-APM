@@ -98,7 +98,7 @@
 }
 
 .version-list li h3 {
-    color: #0687eb;
+    /* color: #0687eb; */
     /* font-weight: 400;
     font-size: 16px;*/
     margin-bottom: 8px;
@@ -396,4 +396,19 @@
 
 .head-card-count {
     font-size: 30px;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+.active-status {
+    margin-top: 24px;
+    width: 100px;
+    line-height: 25px;
+}
+.star-icon-blue {
+--sds-c-icon-color-foreground-default: rgb(0, 123, 255);
+--sds-c-icon-color: gray;
 }

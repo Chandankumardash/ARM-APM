@@ -4,7 +4,7 @@
             <div class="card-details-active mb-10" onclick={nextPage}>
                 <h3 slot="title">
                     <span class="head-card-count-active">5</span>
-                    <p>Approved</p>
+                    <p style="color:#fff">Approved</p>
                 </h3>
             </div>
         </div>
@@ -45,7 +45,7 @@
                             <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
                                 <h4 class="date-bg">{employee.Id}</h4>
                             </div>
-                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 text-right">
                                 <h4>{employee.Date}</h4>
                             </div>
                         </div>
@@ -53,27 +53,28 @@
                             <div
                                 class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 text-right">
                                 <span>
-                                    <lightning-icon icon-name="utility:favorite" class="white-icon" style="color:white"
-                                        size="x-small"></lightning-icon>&nbsp;
-                                    <lightning-badge label={employee.Capability__c}
-                                        class={employee.isCapability}></lightning-badge>
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue">
+                                    </lightning-icon>
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue">
+                                    </lightning-icon>
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue">
+                                    </lightning-icon>
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue">
+                                    </lightning-icon>
                                 </span>
                             </div>
                             <div
                                 class="slds-col slds-large-size_6-of-12  slds-medium-size_6-of-12 slds-size_6-of-12 text-right">
-                                <div class="body4_regular"><lightning-formatted-date-time
-                                        value={employee.date}></lightning-formatted-date-time>
-                                </div>
                                 <template if:true={employee.Status__c}>
                                     <span class="body4_regular badge-semi-blue"><lightning-icon
                                             icon-name="utility:check" class="white-icon" size="x-small">
                                         </lightning-icon> Active</span>
                                 </template>
                                 <template if:false={employee.Status__c}>
-                                    <p class="body4_regular description-body badge-semi-red" style="margin-top: 24px">
+                                    <div class="body4_regular description-body badge-semi-red active-status " style="margin-top: 24px; float:right;">
                                         <lightning-icon icon-name="utility:close" class="white-icon" size="x-small">
                                         </lightning-icon> In Active
-                                    </p>
+                                    </div>
                                 </template>
                             </div>
                         </div>
