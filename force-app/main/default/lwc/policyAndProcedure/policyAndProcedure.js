@@ -1,8 +1,8 @@
 import { LightningElement } from 'lwc';
-import paper_icon from "@salesforce/resourceUrl/paperIcon"
+// import paper_icon from "@salesforce/resourceUrl/paperIcon"
 
 export default class PolicyAndProcedure extends LightningElement {
-    paperIcon = paper_icon;
+    paperIcon = "";
     policies = [
         {
             "Id": "1231", 
