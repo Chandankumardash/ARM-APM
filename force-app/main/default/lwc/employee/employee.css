@@ -258,14 +258,15 @@
 .card-details {
     padding: 10px 15px;
     border-radius: 6px;
+    border: 1px solid #EFEDEF;
     background-color: #ffffff;
     position: relative;
     text-align: center;
     text-overflow: ellipsis;
     cursor: pointer;
-    height: 100px;
+    height: 90px;
     margin: 0 7px;
-
+    box-shadow: 1px 8px 5px rgb(197, 207, 210);
 }
 
 .text-center {
@@ -411,4 +412,54 @@
 .star-icon-blue {
 --sds-c-icon-color-foreground-default: rgb(0, 123, 255);
 --sds-c-icon-color: gray;
+}
+.p-7 {
+    padding: 7px;
+}
+.lh-15 {
+    line-height: 15px;
+}
+.tab-overdue {
+    border-bottom: #1e73f2 7px solid;
+}
+
+.tab-open {
+    border-bottom: #72bb53 7px solid;
+}
+
+.tab-incomplete {
+    border-bottom: #F6B609 7px solid;
+}
+
+.tab-complete {
+    border-bottom: #72bb53 7px solid;
+}
+.card-details:hover {
+    background: #7977f4
+}
+
+.card-details:hover>.tab-count {
+    color: #fff;
+}
+
+.card-details:hover>.tab-sub-content {
+    color: #fff
+}
+.fs-30 {
+    font-size: 30px;
+}
+.watch-list-card {
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #EFEDEF;
+    background-color: #ffffff;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    margin: 0 7px;
+    box-shadow: 1px 8px 5px rgb(197 207 210);
+    height: 48px;
+    margin-bottom: 20px;
+    padding: 13px;
 }

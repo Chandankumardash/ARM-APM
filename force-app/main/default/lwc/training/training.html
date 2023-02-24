@@ -1,4 +1,56 @@
 <template>
-    
+    <div class="notification-card-details">
+        <div class = "slds-grid" style="margin: 0 10px;">
+            <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
+                <div class="card-details tab-overdue" onclick={nextPage}>
+                    <h3 slot="title" class="tab-count">
+                       1
+                    </h3>
+                    <p class="tab-sub-content">Overdue</p>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
+                <div class="card-details tab-open">
+                    <h3 slot="title" class="tab-count">
+                       5
+                    </h3>
+                    <p class="tab-sub-content">Open</p>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
+                <div class="card-details tab-incomplete">
+                    <h3 slot="title" class="tab-count">
+                        0
+                    </h3>
+                    <p class="tab-sub-content">Incomplete</p>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
+                <div class="card-details tab-complete">
+                    <h3 slot="title" class="tab-count">
+                        1
+                    </h3>
+                    <p class="tab-sub-content">Complete</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="version-list">
+        <template for:each={trainings} for:item="training">
+            <li key={training.Id} >
+                <div class="slds-grid slds-wrap" style="display:flex; align-items: center;" onclick={nextPage}>
+                    <div class="slds-col slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-size_12-of-12" >
+                        <h3 class="contract-card-title">{training.name}</h3>
+                        <h3>{training.Training}</h3>
+                        <h3>Organisation: {training.Organisation}</h3>
+                    </div>
+                    <div class="slds-col" style="margin-left:336px">
+                          <span><b class="training-active">Active</b></span><br>
+                          <span style="margin-left:2px"><b>{training.Completed}</b></span>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </ul>
     
 </template>
