@@ -160,16 +160,9 @@ export default class VendorDetails extends NavigationMixin(LightningElement) {
             this.licenseAndCertification = false;
         }
     }
-
-    handelSafetyPage() {
-        this.vendorDetailsPage = false;
+    handelSafetyPage(){
         this.safetyPage = true;
-    }
-    handelSafetyBack(event) {
-        if (event.detail === 'back') {
-            this.vendorDetailsPage = true;
-            this.safetyPage = false;
-        }
+        this.vendorDetailsPage = false;
     }
 
     handelback(){

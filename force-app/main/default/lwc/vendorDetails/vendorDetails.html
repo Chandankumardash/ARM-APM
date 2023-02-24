@@ -167,28 +167,35 @@
             </div>
         </div>
     </template>
+
     <template if:true={vendorProfilePage}>
         <c-vendor-profile onclick={handelVendorProfileBack}></c-vendor-profile>
     </template>
+
     <template if:true={vendorEmployeePage}>
         <c-employee onclick={handelVendorEmployeeBack}></c-employee>
     </template>
+
     <template if:true={vendorContractPage}>
         <c-contracts onclick={handelVendorContractBack}></c-contracts>
     </template>
     <template if:true={vendorPolicyPage}>
         <c-policy-and-procedure onclick={handelVendorPolicyBack}></c-policy-and-procedure>
     </template>
+
     <template if:true={vendorTrainingPage}>
         <c-training onclick={handelVendorTrainingBack}></c-training>
     </template>
+
     <template if:true={vendorWorkhistoryPage}>
         <c-work-history onclick={handelVendorWorkHistoryBack}></c-work-history>
     </template>
+
     <template if:true={licenseAndCertification}>
         <c-license-and-certification onclick={handelLicenseAndCertificationBack}></c-license-and-certification>
     </template>
+
     <template if:true={safetyPage}>
-        <c-safety onclick={handelSafetyBack}></c-safety>
+        <c-chandan-safety></c-chandan-safety>
     </template>
 </template>
