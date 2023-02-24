@@ -412,3 +412,9 @@
 --sds-c-icon-color-foreground-default: rgb(0, 123, 255);
 --sds-c-icon-color: gray;
 }
+.p-7 {
+    padding: 7px;
+}
+.lh-15 {
+    line-height: 15px;
+}

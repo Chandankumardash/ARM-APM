@@ -25,9 +25,9 @@
             </div>
         </div>
     </div>
-    <ul class="version-list">
+    <ul class="version-list p-7">
         <template for:each={employees} for:item="employee">
-            <li key={employee.Id} class="slds-m-right_none">
+            <li key={employee.Id} class="slds-m-right_none lh-15">
                 <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;"
                     onclick={nextPage}>
                     <div
@@ -40,7 +40,7 @@
                                 <h3 style="font-size: 20px;">{employee.name}</h3><br>
                                 <span class="slds-m-left_small"><b>{employee.occupation}</b>
                                 </span>
-                                <p class="body4_regular approved-label text-green">{employee.workStatus} Today</p>
+                                
                             </div>
                             <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
                                 <h4 class="date-bg">{employee.Id}</h4>
@@ -50,8 +50,13 @@
                             </div>
                         </div>
                         <div class="slds-grid slds-wrap slds-align_absolute-center">
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+                                <span>
+                                <p class="body4_regular approved-label text-green">{employee.workStatus} Today</p>
+                                </span>
+                            </div>
                             <div
-                                class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 text-right">
+                                class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
                                 <span>
                                     <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue">
                                     </lightning-icon>
@@ -64,7 +69,7 @@
                                 </span>
                             </div>
                             <div
-                                class="slds-col slds-large-size_6-of-12  slds-medium-size_6-of-12 slds-size_6-of-12 text-right">
+                                class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 text-right">
                                 <template if:true={employee.Status__c}>
                                     <span class="body4_regular badge-semi-blue"><lightning-icon
                                             icon-name="utility:check" class="white-icon" size="x-small">
