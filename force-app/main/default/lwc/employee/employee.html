@@ -66,7 +66,7 @@
                                 <h4>{employee.Date}</h4>
                             </div>
                         </div>
-                        <div class="slds-grid slds-wrap slds-align_absolute-center">
+                        <div class="slds-grid slds-wrap slds-align_absolute-center" style="align-items: end;">
                             <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
                                 <span>
                                 <p class="body4_regular approved-label text-green">{employee.workStatus} Today</p>
@@ -75,13 +75,13 @@
                             <div
                                 class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
                                 <span>
-                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue">
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
                                     </lightning-icon>
-                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue">
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
                                     </lightning-icon>
-                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue">
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
                                     </lightning-icon>
-                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue">
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
                                     </lightning-icon>
                                 </span>
                             </div>
@@ -93,7 +93,7 @@
                                         </lightning-icon> Active</span>
                                 </template>
                                 <template if:false={employee.Status__c}>
-                                    <div class="body4_regular description-body badge-semi-red active-status " style="margin-top: 24px; float:right;">
+                                    <div class="body4_regular description-body badge-semi-red active-status " style="float:right;">
                                         <lightning-icon icon-name="utility:close" class="white-icon" size="x-small">
                                         </lightning-icon> In Active
                                     </div>
