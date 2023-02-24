@@ -119,6 +119,8 @@
 }
 
 .workorder-checklist{
-    color:rgb(245, 8, 8);
-    border:1px solid rgb(241, 8, 8)
+    color: rgb(245, 8, 8);
+    border: 1px solid rgb(241, 8, 8);
+    padding: 12px;
+    border-radius: 7px;
 }

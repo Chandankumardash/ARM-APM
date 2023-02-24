@@ -1,10 +1,10 @@
 <template>
     <div class="notification-card-details">
-        <div class = "slds-grid" style="margin: 0 10px;">
+        <div class="slds-grid" style="margin: 0 10px;">
             <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
                 <div class="card-details tab-overdue" onclick={nextPage}>
                     <h3 slot="title" class="tab-count">
-                       2
+                        2
                     </h3>
                     <p class="tab-sub-content">Open</p>
                 </div>
@@ -12,7 +12,7 @@
             <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
                 <div class="card-details tab-open">
                     <h3 slot="title" class="tab-count">
-                       2
+                        2
                     </h3>
                     <p class="tab-sub-content">In Progress</p>
                 </div>
@@ -37,43 +37,48 @@
     </div>
     <ul class="version-list">
         <template for:each={workOrders} for:item="workOrder">
-            <li key={workOrder.Id} >
-                <div class="slds-grid slds-wrap" style="display:flex; align-items: center;" onclick={nextPage}>
-                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_12-of-12" >
+            <li key={workOrder.Id}>
+                <div class="slds-grid slds-wrap" style="margin-bottom: 10px;">
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_12-of-12">
                         <h3 class="contract-card-title">{workOrder.name}</h3>
                         <h3>{workOrder.item}</h3>
                         <h3>{workOrder.location}</h3>
                         <h3>Type: {workOrder.type}</h3>
                     </div>
-                    <!-- <div class="slds-col">
-                    <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
-                       <span>{workOrder.id}</span>
+                    <div class="slds-col" style="text-align: right;">
+                        <span>{workOrder.date}</span><br>
+                        <span>{workOrder.owner}</span>
                     </div>
-                    <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
-                      <span>{workOrder.status}</span>
-                    </div>
-                    <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
-                      <span>{workOrder.priority}</span>
-                    </div>
-                    <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
-                       <span>{workOrder.risk}</span>
-                    </div>
-                    </div>
-                    <div class="slds-col">
-                        <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-2">
-                           <span class="workorder-checklist">Pre-Job Checklist:{workOrder.preJobChecklist}</span>
-                        </div>
-                        <div class="slds-col slds-large-size_1-of-2 slds-medium-size_1-of-2 slds-size_1-of-2">
-                          <span class="workorder-checklist">Contractor Checklist:{workOrder.contractorChecklist}</span>
-                        </div>
-                        </div>
-                    <div class="slds-col" style="margin-left:336px">
-                          <span>{workOrder.date}</span><br>
-                          <span>{workOrder.owner}</span>
-                    </div> -->
                 </div>
+                
+                <div class="slds-grid slds-wrap" style="margin-bottom: 20px;">
+                    <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                        <span>{workOrder.id}</span>
+                    </div>
+                    <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                        <span>Status: {workOrder.status}</span>
+                    </div>
+                    <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                        <span>Priority: {workOrder.priority}</span>
+                    </div>
+                    <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                        <span>Risk: {workOrder.risk}</span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_12-of-12">
+                        <span class="workorder-checklist">Pre-Job Checklist:{workOrder.preJobChecklist}</span>
+                    </div>
+                    <div class="slds-col" style="text-align: right;">
+                        <span class="workorder-checklist">Contractor
+                            Checklist:{workOrder.contractorChecklist}</span>
+                    </div>
+                </div>
+                <!-- <div class="slds-grid slds-wrap" style="display:flex; align-items: center;" onclick={nextPage}>
+                    
+                </div> -->
             </li>
         </template>
     </ul>
-    
+
 </template>
