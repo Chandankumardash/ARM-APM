@@ -2,7 +2,7 @@
     padding: 15px;
     border: 1px solid #edeeef;
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin: 10px;
     background-color: #ffffff; 
     position: relative;
     cursor: pointer;
@@ -19,13 +19,10 @@
     margin: 0 auto;
 }
 .middle-card-details {
-
     border-radius: 5px;
-    margin-bottom: 10px;
+    margin: 5px;
     position: relative;
     cursor: pointer;
-    margin-left: -7px;
-    margin-right: -7px;
 }
 .card-details {
     padding: 10px 15px;

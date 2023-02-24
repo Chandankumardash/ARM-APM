@@ -1,6 +1,6 @@
 <template>
-    <div class="back-button" onclick={handelback}>
-        <lightning-icon style="padding: 5px" icon-name="utility:back" size="x-medium"></lightning-icon>
+    <div onclick={handelback}>
+        <lightning-icon style="margin: 10px 10px 0 10px" icon-name="utility:back" size="x-medium"></lightning-icon>
     </div>
     <div class="profile-heading">
         <div class = "slds-grid slds-wrap">
@@ -286,7 +286,7 @@
     <template if:true={productServicesPage}>
         <ul class="version-list">
             <template for:each={products} for:item="product">
-                <li key={product.Id} class="slds-m-right_none">
+                <li key={product.Id} >
                     <div class="slds-grid slds-wrap">
                         <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_8-of-12">
                             <h4  style="font-size: 20px;">{product.name}</h4>

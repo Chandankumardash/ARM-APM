@@ -1,11 +1,16 @@
 <template>
     <template if:true={vendorCardPage}>
-        <div class="back-button" onclick={handelback}>
-            <lightning-icon style="padding: 5px" icon-name="utility:back" size="x-medium"></lightning-icon>
+        <div>
+            <span onclick={handelback}>
+                <lightning-icon icon-name="utility:back" size="x-medium" style="margin: 10px 10px 0 10px;"></lightning-icon>
+            </span>
+            <lightning-icon icon-name="utility:picklist_type" size="x-medium" style="margin: 10px 10px 0 10px;"></lightning-icon>
+            <lightning-icon icon-name="utility:ad_set" size="x-medium" style="margin: 10px 10px 0 10px;" class="blue-icon"></lightning-icon>
+            <lightning-icon icon-name="utility:slider" size="x-medium" style="margin: 10px 10px 0 10px; text-align:right"></lightning-icon>
         </div>
         <ul class="version-list">
             <template for:each={companyList} for:item="company">
-                <li key={company.Id} class="slds-m-right_none">
+                <li key={company.Id}>
                     <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;" onclick={nextPage}>
                         <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_12-of-12 text-center" >
                             <lightning-badge label={company.shortName} class="icon-label"></lightning-badge>
