@@ -1,0 +1,89 @@
+:host {
+    --sds-c-card-color-background: #f3f3f3;
+}
+.notification-card-details {
+    /* border: 1px solid #edeeef; */
+    border-radius: 5px;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+    margin-left: -7px;
+    margin-right: -7px;
+}
+
+.main-card {
+    border: 1px solid #edeeef;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+}
+.card-details {
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    height: 90px; 
+    margin: 0 7px;
+    
+}
+
+.version-list{
+    /* background-color: #ecf0f2;  */
+}
+.version-list li{
+    padding: 15px;
+    border: 1px solid #edeeef;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #ffffff; 
+    position: relative;
+    cursor: pointer;
+}
+
+
+.version-list li:hover{
+    background:#e9f6ff;
+    border: 1px solid #4786ff;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
+    
+}
+.text-center {
+    text-align: center;
+}
+
+.tab-sub-content {
+    font-size: 14px;
+    color: #657d95;
+    font-weight: 500;
+}
+.tab-count {
+    font-size: 26px;
+    font-weight: 700;
+    color: #657d95;
+}
+.tab-current {
+    border-bottom: #72bb53 7px solid;
+}
+.tab-due-soon {
+    border-bottom: #ffb253 7px solid;
+}
+.tab-due-past {
+    border-bottom: #ff3823 7px solid;
+}
+
+.contract-card-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #434b52;
+    margin-bottom: 5px;
+}
+
+.back-button {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    border-radius: 50% !important;
+    background: #4dd7fa;
+}
