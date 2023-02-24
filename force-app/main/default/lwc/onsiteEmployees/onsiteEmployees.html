@@ -1,0 +1,78 @@
+<template>
+    <div class="notification-card-details">
+        <div class = "slds-grid">
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details tab-current" onclick={nextPage}>
+                    <h3 slot="title" class="tab-count">
+                       1
+                    </h3>
+                    <p class="tab-sub-content">Current</p>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details tab-due-soon">
+                    <h3 slot="title" class="tab-count">
+                       1
+                    </h3>
+                    <p class="tab-sub-content">Due Soon</p>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                <div class="card-details tab-due-past">
+                    <h3 slot="title" class="tab-count">
+                        1
+                    </h3>
+                    <p class="tab-sub-content">Past Due</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ul class="version-list">
+        <template for:each={employees} for:item="employee">
+            <li key={employee.Id} class="slds-m-right_none">
+                <div class="slds-grid slds-wrap" style="display:flex; align-items: center;" onclick={nextPage}>
+                    <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_12-of-12 text-center" >
+                        <lightning-badge  class="icon-label slds-badge"></lightning-badge>
+                    </div>
+                    
+                     <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_12-of-12">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12" >
+                                <h3 class="employee-card-title">{employee.name}</h3>
+                                <span> <h3 class="employee-card-title">{employee.desc}</h3>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12" >
+                               <b> <span style="color: red;">Exceeded 2 days</span></b>
+                            </div>
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12" >
+                                    <span class="body4_regular badge-semi-blue">
+                                        <lightning-icon
+                                        icon-name="utility:check" class="white-icon" size="x-small">
+                                    </lightning-icon> Active
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-large-size_7-of-12 slds-medium-size_7-of-12 slds-size_12-of-12" >
+                                <span> <h3 class="employee-card-title">{employee.address}</h3>
+                                </span>
+                                <span> <h3 class="employee-card-title" >Onboard Date: {employee.OnBoardDate}</h3>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-size_12-of-12" style="text-align: end;">
+                                    <span> <h3 class="employee-card-title" >{employee.reporting}</h3>
+                                    </span>
+                                    
+                                    <span> <h3 class="employee-card-title" style="align-items: end;">End Date: {employee.endDate}</h3>
+                                    </span>
+                            </div>
+                           
+                        </div>
+                        
+                    </div> 
+                </div>
+            </li>
+        </template>
+    </ul>
+</template>
