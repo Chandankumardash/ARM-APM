@@ -11,6 +11,7 @@ export default class Contracts extends LightningElement {
             "lastUpload": "06/22/2022",
             "nextUpload": "12/22/2022",
             "overdue": true,
+            "past": true
         },
         {
             "Id": "1232",   
@@ -18,6 +19,7 @@ export default class Contracts extends LightningElement {
             "lastUpload": "10/13/2022",
             "nextUpload": "10/04/2022",
             "overdue": false,
+            "past": false
         },
         {
             "Id": "1233",   
@@ -25,6 +27,7 @@ export default class Contracts extends LightningElement {
             "lastUpload": "08/02/2022",
             "nextUpload": "08/02/2022",
             "overdue": true,
+            "past": false
         },
     ]
 

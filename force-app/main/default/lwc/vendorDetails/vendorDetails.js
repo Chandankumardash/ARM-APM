@@ -21,6 +21,11 @@ export default class VendorDetails extends NavigationMixin(LightningElement) {
     vendorDetailsPage = true;
     vendorProfilePage = false;
     vendorContractPage = false;
+    vendorPolicyPage = false;
+    vendorTrainingPage = false;
+    vendorWorkhistoryPage = false;
+    licenseAndCertification = false;
+    safetyPage = false;
     company = 
         {
             "Id": "1234",   
@@ -92,6 +97,16 @@ export default class VendorDetails extends NavigationMixin(LightningElement) {
             this.vendorProfilePage = false;
         }
     }
+    handelVendorEmployeePage() {
+        this.vendorDetailsPage = false;
+        this.vendorEmployeePage = true
+    }
+    handelVendorEmployeeBack(event){
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.vendorEmployeePage = false;
+        }
+    }
     handelVendorContractPage() {
         this.vendorDetailsPage = false;
         this.vendorContractPage = true;
@@ -102,17 +117,61 @@ export default class VendorDetails extends NavigationMixin(LightningElement) {
             this.vendorContractPage = false;
         }
     }
+    
+    handelVendorTrainingPage() {
+        this.vendorDetailsPage = false;
+        this.vendorTrainingPage = true;
+    }
+    handelVendorTrainingBack(event) {
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.vendorTrainingPage = false;
+        }
+    }
+
+    handelVendorPolicyPage() {
+        this.vendorDetailsPage = false;
+        this.vendorPolicyPage = true;
+    }
+    handelVendorPolicyBack(event) {
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.vendorPolicyPage = false;
+        }
+    }
+    handelVendorWorkhistoryPage() {
+        this.vendorDetailsPage = false;
+        this.vendorWorkhistoryPage = true;
+    }
+    handelVendorWorkHistoryBack(event) {
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.vendorWorkhistoryPage = false;
+        }
+    }
+
+    handelLicenseAndCertificationPage() {
+        this.vendorDetailsPage = false;
+        this.licenseAndCertification = true;
+    }
+    handelLicenseAndCertificationBack(event) {
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.licenseAndCertification = false;
+        }
+    }
+    handelSafetyPage(){
+        this.safetyPage = true;
+        this.vendorDetailsPage = false;
+    }
+    handelSafetyBack(event) {
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.safetyPage = false;
+        }
+    }
 
     handelback(){
         this.dispatchEvent(new CustomEvent('click', {detail: "back"}));
     }
-
-    // renderedCallback() {
-    //     const style = document.createElement("style");
-    //     style.innerText = `slds-card .slds-card {
-    //         background: white !important;
-    //     }`;
-
-    //     this.template.querySelector("slds-card").appendChild(style);
-    // }
 }

@@ -1,6 +1,7 @@
 <template>
-    <div onclick={handelPolicyBack}>
+    <div onclick={handelPolicyBack} style="font-size: x-large;">
         <lightning-icon icon-name="utility:back" size="x-medium" style="margin: 10px;"></lightning-icon>
+        <span>Policies & Procedures</span>
     </div>
     <div class="notification-card-details">
         <div class = "slds-grid" style="margin: 0 10px;">
@@ -31,25 +32,30 @@
         </div>
     </div>
     <ul class="version-list">
-        <template for:each={contracts} for:item="contract">
-            <li key={contract.Id} >
+        <template for:each={policies} for:item="policy">
+            <li key={policy.Id} >
                 <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;" onclick={nextPage}>
                     <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_12-of-12 text-center" >
                         <img src={paperIcon} width=60 height=60 style="text-align: left;">
                     </div>
                     <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_12-of-12" >
-                        <h3 class="contract-card-title">{contract.name}</h3>
-                        <span >Last Uploaded: &nbsp;<b>{contract.lastUpload}</b>
+                        <h3 class="policy-card-title">{policy.name}</h3>
+                        <span >Last Uploaded: &nbsp;<b>{policy.lastUpload}</b>
                         </span>
                     </div>
                     <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12" >
-                        <template if:true={contract.overdue}>
-                            <p >Overdue</p>
+                        <template if:true={policy.overdue}>
+                            <template if:true={policy.past}>
+                                <p style="color: #ff3823"> 13 days Overdue</p>
+                            </template>
+                            <template if:false={policy.past}>
+                                <p style="color: #ffb253"> Due Soon</p>
+                            </template>
                         </template>
-                        <template if:false={contract.overdue}>
-                            <p >Current</p>
+                        <template if:false={policy.overdue}>
+                            <p style="color: #72bb53">Current</p>
                         </template>
-                        <span >Next Upload: &nbsp;<b>{contract.lastUpload}</b>
+                        <span >Next Upload: &nbsp;<b>{policy.lastUpload}</b>
                         </span>
                     </div>
                 </div>

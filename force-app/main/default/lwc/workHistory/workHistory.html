@@ -1,0 +1,30 @@
+<template>
+    <div onclick={handelWorkhistoryBack} style="font-size: x-large;">
+        <lightning-icon icon-name="utility:back" size="x-medium" style="margin: 10px;"></lightning-icon> 
+        <span>Work History</span>
+    </div>
+    <ul class="version-list">
+        <template for:each={workHistories} for:item="workHistory">
+            <li key={workHistory.Id} >
+                <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;" onclick={nextPage}>
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_12-of-12" >
+                        <h3 class="workHistory-card-title">{workHistory.name}</h3>
+                        <p class="mt-10">{workHistory.companyName}</p>
+                        <p class="mt-10"> On Board Date: {workHistory.onBoardDate}</p>
+                        <p class="mt-10"><i> Completed By: {workHistory.completedBy}</i></p>
+                        <lightning-badge label={workHistory.code} class="badge-semi-green mt-10"></lightning-badge>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_12-of-12 text-right" >
+                        <div>
+                            <p>{workHistory.date}</p>
+                            <p class="mt-10">{workHistory.plant}</p>
+                            <p class="mt-10">End Date: {workHistory.endDate}</p>
+                            <p class="mt-10"><i>Reviewed & Approved By: {workHistory.approvedBy}</i></p>
+                            <p class="mt-10">Assessment Score: {workHistory.assesmentScore}</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </ul>
+</template>
