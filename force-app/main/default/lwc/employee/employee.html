@@ -1,0 +1,85 @@
+<template>
+    <div class="slds-grid mb-30p">
+        <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+            <div class="card-details-active mb-10" onclick={nextPage}>
+                <h3 slot="title">
+                    <span class="head-card-count-active">5</span>
+                    <p>Approved</p>
+                </h3>
+            </div>
+        </div>
+        <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+            <div class="card-details mb-10" onclick={nextPage}>
+                <h3 slot="title">
+                    <span class="head-card-count">2</span>
+                    <p>Available</p>
+                </h3>
+            </div>
+        </div>
+        <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+            <div class="card-details mb-10" onclick={nextPage}>
+                <h3 slot="title">
+                    <span class="head-card-count">4</span>
+                    <p>Pending Approved</p>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <ul class="version-list">
+        <template for:each={employees} for:item="employee">
+            <li key={employee.Id} class="slds-m-right_none">
+                <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;"
+                    onclick={nextPage}>
+                    <div
+                        class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_12-of-12 text-center">
+                        <lightning-badge label={employee.shortName__c} class="icon-label"></lightning-badge>
+                    </div>
+                    <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_12-of-12">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+                                <h3 style="font-size: 20px;">{employee.name}</h3><br>
+                                <span class="slds-m-left_small"><b>{employee.occupation}</b>
+                                </span>
+                                <p class="body4_regular approved-label text-green">{employee.workStatus} Today</p>
+                            </div>
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+                                <h4 class="date-bg">{employee.Id}</h4>
+                            </div>
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+                                <h4>{employee.Date}</h4>
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-wrap slds-align_absolute-center">
+                            <div
+                                class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 text-right">
+                                <span>
+                                    <lightning-icon icon-name="utility:favorite" class="white-icon" style="color:white"
+                                        size="x-small"></lightning-icon>&nbsp;
+                                    <lightning-badge label={employee.Capability__c}
+                                        class={employee.isCapability}></lightning-badge>
+                                </span>
+                            </div>
+                            <div
+                                class="slds-col slds-large-size_6-of-12  slds-medium-size_6-of-12 slds-size_6-of-12 text-right">
+                                <div class="body4_regular"><lightning-formatted-date-time
+                                        value={employee.date}></lightning-formatted-date-time>
+                                </div>
+                                <template if:true={employee.Status__c}>
+                                    <span class="body4_regular badge-semi-blue"><lightning-icon
+                                            icon-name="utility:check" class="white-icon" size="x-small">
+                                        </lightning-icon> Active</span>
+                                </template>
+                                <template if:false={employee.Status__c}>
+                                    <p class="body4_regular description-body badge-semi-red" style="margin-top: 24px">
+                                        <lightning-icon icon-name="utility:close" class="white-icon" size="x-small">
+                                        </lightning-icon> In Active
+                                    </p>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </ul>
+</template>
