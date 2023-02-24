@@ -48,4 +48,8 @@ export default class Employee extends LightningElement {
             "Date": "Jun 28 2020"
         }
     ];
+
+    handelEmployeeBack(){
+        this.dispatchEvent(new CustomEvent('click', {detail: "back"}));
+    }
 }

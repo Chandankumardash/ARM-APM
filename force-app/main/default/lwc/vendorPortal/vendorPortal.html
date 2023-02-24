@@ -1,7 +1,10 @@
 <template>
     <div class="main-card">
-        <template if:true={vendorportalPage}>
-            <div class="profile-details">
+        <template if:true={vendorportalPage} >
+            <div style="font-size: x-large;">
+                <span>Vendor Portal</span>
+            </div>
+            <div class="profile-details" >
                 <div class = "slds-grid slds-wrap">
                     <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12">
                         <h3 class="header-title body4_regular" style="font-size: 20px;">{name}</h3>
@@ -13,12 +16,12 @@
                 <div class = "slds-grid">
                     <div class="slds-col slds-large-size_2-of-4 slds-medium-size_2-of-4 slds-size_2-of-4">
                         <div class="card-details mb-10" onclick={nextPage}>
-                            <img src={userIcon} width=30 height=30>
+                            <img src={circularUser} width=30 height=30>
                             <h3 class="card-titel">Vender Check In</h3>
                             <p class="card-sub-titel">Track Vendors Onsite</p>
                         </div>
                         <div class="card-details mb-10" onclick={handelApprovedVendor}>
-                                <img src={paperIcon} width=30 height=30>
+                                <img src={approvedUser} width=30 height=30>
                                 <h3 class="card-titel">Approved Vendors</h3>
                                 <p class="card-sub-titel">Manage Active Vendors</p>
                         </div>
@@ -28,39 +31,39 @@
                                 <p class="card-sub-titel">Manage Alerts</p>
                         </div>
                         <div class="card-details mb-10">
-                                <img src={auditIcon} width=30 height=30>
+                                <img src={calculator} width=30 height=30>
                                 <h3 class="card-titel">Onsite Evalution</h3> 
                                 <p class="card-sub-titel">Perform Onsite Evaluation</p>
                         </div>
                         <div class="card-details mb-10">
-                                <img src={auditIcon} width=30 height=30>
+                                <img src={searchVendor} width=30 height=30>
                                 <h3 class="card-titel">Search Vendors</h3> 
                                 <p class="card-sub-titel">Find Vendors</p>
                         </div>
                     </div>
                     <div class="slds-col slds-large-size_2-of-4 slds-medium-size_2-of-4 slds-size_2-of-4">
                         <div class="card-details mb-10">
-                                <img src={paperIcon} width=30 height=30>
+                                <img src={workOrders} width=30 height=30>
                                 <h3 class="card-titel">Work Orders</h3>
                                 <p class="card-sub-titel">Create & Manage Work Orders</p>
                         </div>
                         <div class="card-details mb-10">
-                                <img src={clockIcon} width=30 height=30>
+                                <img src={approval} width=30 height=30>
                                 <h3 class="card-titel">Approval Management</h3>
                                 <p class="card-sub-titel">Qualify Vendors</p>
                         </div>
                         <div class="card-details mb-10">
-                                <img src={trainingIcon} width=30 height=30>
+                                <img src={location} width=30 height=30>
                                 <h3 class="card-titel">Vendor Location</h3>
                                 <p class="card-sub-titel">View Vendors Location Real-Time</p>
                         </div>
                         <div class="card-details mb-10">
-                                <img src={alertsIcon} width=30 height=30>
+                                <img src={scoreCard} width=30 height=30>
                                 <h3 class="card-titel">Vendor Scorecard</h3>
                                 <p class="card-sub-titel">Manage Vendor Performance</p>
                         </div>
                         <div class="card-details mb-10">
-                                <img src={auditIcon} width=30 height=30>
+                                <img src={incident} width=30 height=30>
                                 <h3 class="card-titel">Incident</h3> 
                                 <p class="card-sub-titel">Manage Vendor Incidents</p>
                         </div>

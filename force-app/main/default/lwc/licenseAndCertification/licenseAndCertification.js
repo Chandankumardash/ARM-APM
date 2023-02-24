@@ -1,7 +1,10 @@
 import { LightningElement } from 'lwc';
+import paper_icon from "@salesforce/resourceUrl/paperIcon"
 
 export default class LicenseAndCertification extends LightningElement {
-
+    paperIcon = paper_icon;
+    licenses= true;
+    certificate = false;
     contracts = [
         {
             "Id": "1231",   
@@ -11,7 +14,7 @@ export default class LicenseAndCertification extends LightningElement {
             "lastUpload": "06/22/2022",
             "nextUpload": "12/22/2022",
             "limits":"$2000,000",
-            "overdue": true,
+            "overdue": false,
         },
         {
             "Id": "1232",   
@@ -34,6 +37,14 @@ export default class LicenseAndCertification extends LightningElement {
             "overdue": true,
         },
     ]
+    handleLicensesClick(){
+        this.licenses = true;
+        this.certificate  = false;
+    }
+    handleCertificateClick(){
+        this.licenses = false;
+        this.certificate  = true;
+    }
 
     handelContractsBack(){
         this.dispatchEvent(new CustomEvent('click', {detail: "back"}));

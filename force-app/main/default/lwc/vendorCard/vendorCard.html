@@ -1,12 +1,13 @@
 <template>
     <template if:true={vendorCardPage}>
         <div>
-            <span onclick={handelback}>
+            <span onclick={handelback} style="font-size: x-large;">
                 <lightning-icon icon-name="utility:back" size="x-medium" style="margin: 10px 10px 0 10px;"></lightning-icon>
+                <span>Approved Vendor</span>
             </span>
-            <lightning-icon icon-name="utility:picklist_type" size="x-medium" style="margin: 10px 10px 0 10px;"></lightning-icon>
+            <!-- <lightning-icon icon-name="utility:picklist_type" size="x-medium" style="margin: 10px 10px 0 10px;"></lightning-icon>
             <lightning-icon icon-name="utility:ad_set" size="x-medium" style="margin: 10px 10px 0 10px;" class="blue-icon"></lightning-icon>
-            <lightning-icon icon-name="utility:slider" size="x-medium" style="margin: 10px 10px 0 10px; text-align:right"></lightning-icon>
+            <lightning-icon icon-name="utility:slider" size="x-medium" style="margin: 10px 10px 0 10px; text-align:right"></lightning-icon> -->
         </div>
         <ul class="version-list">
             <template for:each={companyList} for:item="company">
