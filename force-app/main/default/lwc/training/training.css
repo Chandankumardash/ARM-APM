@@ -6,7 +6,6 @@
     border-radius: 5px;
     margin-bottom: 10px;
     position: relative;
-    cursor: pointer;
     margin-left: -7px;
     margin-right: -7px;
 }
@@ -29,17 +28,7 @@
     margin: 0 7px; 
     box-shadow: 1px 8px 5px rgb(197, 207, 210);
 }
-.card-details:hover {
-   background: #7977f4
-}
 
-.card-details:hover >.tab-count{
-    color: #fff;
-}
-
-.card-details:hover >.tab-sub-content{
-    color: #fff
- }
 
 .version-list{
     /* background-color: #ecf0f2;  */
@@ -51,16 +40,8 @@
     margin: 10px;
     background-color: #ffffff; 
     position: relative;
-    cursor: pointer;
 }
 
-
-.version-list li:hover{
-    background:#e9f6ff;
-    border: 1px solid #4786ff;
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.1);
-    
-}
 .text-center {
     text-align: center;
 }

@@ -24,7 +24,7 @@
                                 <p class="body4_regular description-body " style=" margin-top: 10px; color: rgb(15, 48, 233)"><lightning-icon icon-name="utility:check" class="blue-icon" size="x-small">
                                 </lightning-icon> Active</p>
                             </template>
-                            <p class="body4_regular ">Sipplier# {company.supplier}</p>
+                            <p class="body4_regular ">Supplier# {company.supplier}</p>
                             <p class="body4_regular ">Overall Score: {company.score}</p>
                             <p class="body4_regular badge-semi-blue"><lightning-icon icon-name="utility:call" class="white-icon" style="color:white" size="x-small"></lightning-icon>&nbsp;{company.mobile}</p>
                         </div>
@@ -35,7 +35,7 @@
         <div class="middle-card-details">
             <div class = "slds-grid slds-wrap">
                 <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3 ">
-                    <div class={cardDetailsStyle} onclick={handelAlertClick}>
+                    <div class={alertClass} onclick={handelAlertClick}>
                         <div class = "slds-grid">
                             <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12 ">
                                 <div class="middle-icon-label">
@@ -50,10 +50,10 @@
                     </div>
                 </div>
                 <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
-                    <div class="card-details">
+                    <div class="card-details-middle" onclick={handelWorkOrderClick}>
                         <div class = "slds-grid">
                             <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
-                                <div class="middle-icon-label">
+                                <div class="middle-icon-label" >
                                     <img src={paperIcon} width=30 height=30 style="text-align: left;"> 
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
-                    <div class="card-details">
+                    <div class="card-details-middle">
                         <div class = "slds-grid">
                             <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
                                 <div class="middle-icon-label">
@@ -101,10 +101,10 @@
                 <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
                     <div class="card-details mb-10" onclick={handelVendorProfilePage}>
                         <h3 slot="title">
-                            <img src={profileIcon} width=30 height=30><p>Vender Profile</p>
+                            <img src={profileIcon} width=30 height=30><p>Vendor Profile</p>
                         </h3>
                     </div>
-                    <div class="card-details mb-10">
+                    <div class="card-details mb-10" onclick={handelInsurancePage}>
                         <h3 slot="title">
                             <img src={insuranceIcon} width=30 height=30><p>Insurance</p>
                         </h3>
@@ -136,7 +136,7 @@
                             <img src={trainingIcon} width=30 height=30><p>Training</p>
                         </h3>
                     </div>
-                    <div class="card-details mb-10">
+                    <div class="card-details mb-10" onclick={handelAlertsPage}>
                         <h3 slot="title">
                             <img src={alertsIcon} width=30 height=30><p>Public Alerts</p>
                         </h3>
@@ -168,6 +168,10 @@
         </div>
     </template>
 
+    <template if:true={workOrderSection}>
+        <c-work-Order onclick={handelWorkOrderBack}></c-work-Order>
+    </template>
+
     <template if:true={vendorProfilePage}>
         <c-vendor-profile onclick={handelVendorProfileBack}></c-vendor-profile>
     </template>
@@ -197,5 +201,13 @@
 
     <template if:true={safetyPage}>
         <c-chandan-safety onclick={handelSafetyBack}></c-chandan-safety>
+    </template>
+
+    <template if:true={insurancePage}>
+        <c-insurance onclick={handelInsuranceBack}></c-insurance>
+    </template>
+
+    <template if:true={alertPage}>
+        <c-alerts></c-alerts>
     </template>
 </template>

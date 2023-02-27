@@ -36,6 +36,20 @@
     margin: 0 7px;
     
 }
+
+.card-details-middle {
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    height: 100px; 
+    margin: 0 7px;
+    box-shadow: 1px 8px 5px rgb(197, 207, 210);
+}
+
 .card-details:hover {
     background: #e9f6ff;
     border: 1px solid #4786ff;
@@ -51,6 +65,7 @@
     height: 100px; 
     margin: 0 7px;
     background: #4085cb !important;
+    box-shadow: 1px 8px 5px rgb(197, 207, 210);
 }
 
 .back-button {

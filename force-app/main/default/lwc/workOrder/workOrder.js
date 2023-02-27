@@ -46,7 +46,7 @@ export default class WorkOrder extends LightningElement {
         }    
     ]
 
-    handelTrainings(){
+    handelWorkOrderBack(){
         this.dispatchEvent(new CustomEvent('click', {detail: "back"}));
     }
 }

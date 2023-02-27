@@ -26,6 +26,8 @@ export default class VendorDetails extends NavigationMixin(LightningElement) {
     vendorWorkhistoryPage = false;
     licenseAndCertification = false;
     safetyPage = false;
+    insurancePage = false;
+    alertPage = false;
     company = 
         {
             "Id": "1234",   
@@ -75,16 +77,27 @@ export default class VendorDetails extends NavigationMixin(LightningElement) {
     buildingIcon = building_icon;
 
     alertSection = false;
-    cardDetailsStyle = "card-details"
+    workOrderSection = false;
+    alertClass = "card-details-middle";
+    workOrderClass = "card-details-middle";
     handelAlertClick(){
-        console.log('alert');
         if(this.alertSection === false) {
             this.alertSection = true;
-            this.cardDetailsStyle= "card-details-active";
+            this.alertClass= "card-details-active";
         } else if(this.alertSection === true) {
             this.alertSection = false;
-            this.cardDetailsStyle= "card-details";
+            this.alertClass= "card-details-middle";
         }
+    }
+    handelWorkOrderClick(){
+        this.vendorDetailsPage = false;
+        this.alertSection = false;
+        this.workOrderSection = true;
+    }
+
+    handelWorkOrderBack(){
+        this.workOrderSection = false;
+        this.vendorDetailsPage = true;
     }
 
     handelVendorProfilePage() {
@@ -168,6 +181,28 @@ export default class VendorDetails extends NavigationMixin(LightningElement) {
         if (event.detail === 'back') {
             this.vendorDetailsPage = true;
             this.safetyPage = false;
+        }
+    }
+
+    handelInsurancePage(){
+        this.insurancePage = true;
+        this.vendorDetailsPage = false;
+    }
+    handelInsuranceBack(event) {
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.insurancePage = false;
+        }
+    }
+    
+    handelAlertsPage(){
+        // this.alertPage = true;
+        // this.vendorDetailsPage = false;
+    }
+    handelAlertBack(event) {
+        if (event.detail === 'back') {
+            this.vendorDetailsPage = true;
+            this.alertPage = false;
         }
     }
 
