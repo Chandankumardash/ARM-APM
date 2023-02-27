@@ -28,7 +28,7 @@
             </div>
         </div>
     </div>
-    <div class="slds-grid watch-list-card mb-30p">
+    <!-- <div class="slds-grid watch-list-card mb-30p">
         <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
             <h3>Watch List: <b>1</b></h3>
         </div>
@@ -41,6 +41,14 @@
         <div class="slds-col slds-large-size_1-of-4 slds-medium-size_1-of-4 slds-size_1-of-4">
             <h3>Terminated: <b>1</b></h3>
         </div>
+    </div> -->
+    <div class="watch-list-card mb-30p">
+        <ul>
+            <li>Watch List: <span>1</span></li>
+            <li>Top performer: <span>3</span></li>
+            <li>Needs Guidance: <span>1</span></li>
+            <li>Terminated: <span>0</span></li>
+        </ul>
     </div>
     <ul class="version-list p-7">
         <template for:each={employees} for:item="employee">
@@ -53,49 +61,57 @@
                     </div>
                     <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_12-of-12">
                         <div class="slds-grid slds-wrap">
-                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
-                                <h3 style="font-size: 20px;">{employee.name}</h3><br>
-                                <span class="slds-m-left_small"><b>{employee.occupation}</b>
-                                </span>
-                                
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-size_12-of-12">
+                                <h3 style="font-size: 20px; font-weight: 600;">{employee.name}</h3>
                             </div>
-                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
-                                <h4 class="date-bg">{employee.Id}</h4>
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_3-of-12 slds-size_6-of-12">
+                                <div class="emp-code">{employee.Id}</div>
                             </div>
-                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 text-right">
-                                <h4>{employee.Date}</h4>
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_3-of-12 slds-size_6-of-12 text-right">
+                                <h4 style="font-size: 14px; font-weight: 500;">{employee.Date}</h4>
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_6-of-12 slds-size_4-of-12">
+                                <p style="font-size: 14px;">
+                                    <span style="margin-right: 10px;">
+                                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small"></lightning-icon>
+                                    </span> 
+                                    {employee.occupation}
+                                </p>
                             </div>
                         </div>
                         <div class="slds-grid slds-wrap slds-align_absolute-center" style="align-items: end;">
-                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                                <p class="approved-label text-blue" style="font-size: 14px;">
+                                    <span style="margin-right: 10px;">
+                                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small"></lightning-icon>
+                                    </span> 
+                                    {employee.workStatus} Today
+                                </p>
+                            </div>
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_6-of-12 star-rating">
                                 <span>
-                                <p class="body4_regular approved-label text-green">{employee.workStatus} Today</p>
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
+                                    </lightning-icon>
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
+                                    </lightning-icon>
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
+                                    </lightning-icon>
+                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
+                                    </lightning-icon>
                                 </span>
                             </div>
                             <div
-                                class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
-                                <span>
-                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
-                                    </lightning-icon>
-                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
-                                    </lightning-icon>
-                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
-                                    </lightning-icon>
-                                    <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
-                                    </lightning-icon>
-                                </span>
-                            </div>
-                            <div
-                                class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12 text-right">
+                                class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_6-of-12 text-right">
                                 <template if:true={employee.Status__c}>
                                     <span class="body4_regular badge-semi-blue"><lightning-icon
                                             icon-name="utility:check" class="white-icon" size="x-small">
                                         </lightning-icon> Active</span>
                                 </template>
                                 <template if:false={employee.Status__c}>
-                                    <div class="body4_regular description-body badge-semi-red active-status " style="float:right;">
-                                        <lightning-icon icon-name="utility:close" class="white-icon" size="x-small">
-                                        </lightning-icon> In Active
+                                    <div class="body4_regular description-body active-status" style="float:right;">
+                                        Top performer
                                     </div>
                                 </template>
                             </div>

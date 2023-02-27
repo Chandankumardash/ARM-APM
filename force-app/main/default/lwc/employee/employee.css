@@ -405,8 +405,12 @@
     text-align: left;
 }
 .active-status {
-    width: 100px;
     line-height: 25px;
+    background: #04c259;
+    padding: 5px 25px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 20px;
 }
 .star-icon-blue {
 --sds-c-icon-color-foreground-default: rgb(0, 123, 255);
@@ -420,6 +424,7 @@
 }
 .tab-overdue {
     border-bottom: #1e73f2 7px solid;
+    background: #2296f3;
 }
 
 .tab-open {
@@ -444,8 +449,19 @@
 .card-details:hover>.tab-sub-content {
     color: #fff
 }
-.fs-30 {
-    font-size: 30px;
+.card-details h3 {
+    font-size: 28px;
+    font-weight: 700;
+}
+.card-details p {
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.tab-overdue h3, .tab-overdue p { 
+    color: #fff !important;
 }
 .watch-list-card {
     padding: 10px 15px;
@@ -461,4 +477,47 @@
     height: 48px;
     margin-bottom: 20px;
     padding: 13px;
+    white-space: nowrap;
+    overflow: auto;
 }
+.watch-list-card ul {
+    text-align: left;
+}
+.watch-list-card ul li {
+    display: inline-flex;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #727272;
+}
+
+.watch-list-card ul li span {
+    margin-left: 5px;
+    font-weight: 600;
+    color: #000;
+}
+.text-blue {
+    color: #2196f3
+}
+.emp-code {
+    width: 90px;
+    background: #ebebeb;
+    padding: 5px 10px;
+    border-radius: 4px;
+    text-align: center;
+    color: #707f8b;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 auto;
+}
+.star-rating {
+    text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+    .emp-code {
+        margin: unset;
+    }
+    .star-rating {
+        text-align: left;
+    }
+  }
