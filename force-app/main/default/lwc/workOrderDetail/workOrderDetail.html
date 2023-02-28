@@ -1,0 +1,150 @@
+<template>
+    <template for:each={employees} for:item="employee">
+        <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 alignus"
+            key={employee.Id}>
+            <div class="slds-grid slds-wrap">
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Work Order#</span>
+                </div>
+                <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <p>{employee.workOrder}</p>
+                </div>
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Assigned By</span>
+                </div>
+                <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <p>{employee.assignedBy}</p>
+                </div>
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Due Date & Time</span>
+                </div>
+                <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <p>{employee.dueDateandTime}</p>
+                </div>
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Completed date & Time</span>
+                </div>
+                <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <p>{employee.completedDateandTime}</p>
+                </div>
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Type</span>
+                </div>
+                <div class="slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_12-of-12">
+                    <p>{employee.type}</p>
+                </div>
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Location</span>
+                </div>
+                <div class="slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_12-of-12">
+                    <p>{employee.location}</p>
+                </div>
+                <div class="field field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Asset</span>
+                </div>
+                <div class="slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_12-of-12">
+                    <p>{employee.asset}</p>
+                </div>
+                <div class="field field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Parent Asset</span>
+                </div>
+                <div class="slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_12-of-12">
+                    <p>{employee.parentAsset}</p>
+                </div>
+                <div class="field field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Parts</span>
+                </div>
+                <div class="slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_12-of-12">
+                    <p>{employee.parts}</p>
+                </div>
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Status</span>
+                </div>
+                <div class="field slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_12-of-12">
+                    <span>{employee.status}</span>
+                </div>
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Priority</span>
+                </div>
+                <div class="field slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_12-of-12">
+                    <span>{employee.priority}</span>
+                </div>
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span>Risk</span>
+                </div>
+                <div class="field slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_12-of-12">
+                    <span>{employee.risk}</span>
+                </div>
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span style="font-weight: 700;">Description</span>
+                </div>
+                <div class="field slds-col slds-large-size_12-of-12 slds-medium-size_9-of-12 slds-size_12-of-12 ">
+                    <span style="font-weight: 400;">A relief valve is relieve excessive pressure in a pump which could
+                        cause damage to a pump or system.</span>
+                </div>
+                <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                    <span style="font-weight: 700;">Assigned Employees</span>
+                </div>
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered"
+                    aria-label="Example default base table of Opportunities">
+                    <thead>
+                        <tr class="slds-line-height_reset">
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Opportunity Name"> Name</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Account Name">Start Dt.</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Close Date">Work Area</div>
+                            </th>
+                            <th class="" scope="col">
+                                <div class="slds-truncate" title="Close Date">Reported To</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="slds-hint-parent">
+                            <th data-label="Opportunity Name" scope="row">
+                                <div class="slds-truncate" title="Cloudhub">
+                                    <a href="#" tabindex="-1">Mark Otto</a>
+                                </div>
+                            </th>
+                            <td data-label="Account Name">
+                                <div class="slds-truncate" title="Cloudhub">1/18/2023</div>
+                            </td>
+                            <td data-label="Close Date">
+                                <div class="slds-truncate" title="4/14/2015">Floor1, Building2</div>
+                            </td>
+                            <td data-label="Close Date">
+                                <div class="slds-truncate" title="4/14/2015">Aron Hank</div>
+                            </td>
+                        </tr>
+                        <tr class="slds-hint-parent">
+                            <th data-label="Opportunity Name" scope="row">
+                                <div class="slds-truncate" title="Cloudhub">
+                                    <a href="#" tabindex="-1">John Roman</a>
+                                </div>
+                            </th>
+                            <td data-label="Account Name">
+                                <div class="slds-truncate" title="Cloudhub">1/18/2023</div>
+                            </td>
+                            <td data-label="Close Date">
+                                <div class="slds-truncate" title="4/14/2015">Floor1, Building2</div>
+                            </td>
+                            <td data-label="Close Date">
+                                <div class="slds-truncate" title="4/14/2015">Aron Hank</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+               
+                <div class="field slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_12-of-12 " style="margin-top: 6px; width: 100%;">
+                    <button class="slds-button slds-button_outline-brand p-mx-05"  style="float: right">Observation</button>
+                    <button class="slds-button slds-button_outline-brand  p-mx-05" style="float: right">CheckIn/Out History</button>
+                    <button class="slds-button slds-button_brand p-mx-05" style="float: right">View</button>
+                </div>
+            </div>
+         </div>  
+     </template>      
+</template>
