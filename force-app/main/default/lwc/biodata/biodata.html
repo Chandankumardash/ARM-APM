@@ -1,0 +1,44 @@
+<template>
+    <ul class="version-list">
+        <template for:each={biodatas} for:item="biodata">
+            <li key={biodata.Id} class="slds-m-right_none">
+                <div class="slds-grid slds-wrap" style="display:flex;" onclick={nextPage}>
+                    <!-- <div
+                        class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_12-of-12 text-center">
+                        <img src={paperIcon} width=60 height=60 style="text-align: left;">
+                    </div> -->
+                    <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12" >
+                        <p class="mt-10">Date of Birth:</p>
+                        <p class="mt-10">Weight:</p>
+                        <p class="mt-10">Height:</p>
+                        <p class="mt-10">Blood Group:</p>
+                        <p class="mt-10">Language:</p>
+                        <p class="mt-10">Mobile:</p>
+                        <p class="mt-10">Email ID:</p>
+                        <p class="mt-10">Street:</p>
+                        <p class="mt-10">City/Town:</p>
+                        <p class="mt-10">State/ Province/Region:</p>
+                        <p class="mt-10">Country:</p>
+                        <p class="mt-10">Nationality:</p>
+                        <p class="mt-10">Passport Type:</p>
+                    </div>
+                    <div class="slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_12-of-12">
+                        <p class="mt-10" style="color:grey">{biodata.dob}</p>
+                        <p class="mt-10" style="color:grey">{biodata.weight}</p>
+                        <p class="mt-10" style="color:grey">{biodata.height}</p>
+                        <p class="mt-10" style="color:grey">{biodata.blood_group}</p>
+                        <p class="mt-10" style="color:grey">{biodata.language}</p>
+                        <p class="mt-10" style="color:grey">{biodata.Mobile}</p>
+                        <p class="mt-10" style="color:grey">{biodata.email}</p>
+                        <p class="mt-10" style="color:grey">{biodata.street}</p>
+                        <p class="mt-10" style="color:grey">{biodata.city}</p>
+                        <p class="mt-10" style="color:grey">{biodata.state}</p>
+                        <p class="mt-10" style="color:grey">{biodata.country}</p>
+                        <p class="mt-10" style="color:grey">{biodata.nationality}</p>
+                        <p class="mt-10" style="color:grey">{biodata.type_passport}</p>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </ul>
+</template>
