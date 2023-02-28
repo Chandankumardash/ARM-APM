@@ -1,0 +1,92 @@
+<template>
+    <ul class="version-list">
+        <template for:each={employees} for:item="employee">
+            <li key={employee.Id} class="slds-m-right_none">
+                <div class="slds-grid mb-30p">
+                    <ul class="slds-path__nav">
+                        <template for:each={menus} for:item="menu">
+                            <li class="slds-is-current slds-path__item slds-is-active " key={menu.label}
+                                onclick={menu.command} if:true={menu.active}>
+                                <a class="tabHeader slds-path__link" href="javascript:void(0);"
+                                   title={menu.label}><span>{menu.label}</span></a>
+                            </li>
+                            <li class="slds-is-incomplete slds-path__item" key={menu.label} onclick={menu.command}
+                                if:false={menu.active}>
+                                <a class="tabHeader slds-path__link" href="javascript:void(0);" title={menu.label}><span
+                                        class="ahead slds-path__stage"></span><span class="title slds-path__title">
+                                        {menu.label}</span></a>
+                            </li>
+                        </template>
+                    </ul>
+
+                </div>
+            </li>
+        </template>
+        <template if:true={isRequestNewVendor}>
+            <template for:each={employees} for:item="employee">
+                <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 alignMe"
+                    key={employee.Id}>
+                    <div class="slds-grid slds-wrap">
+                        <div
+                            class=" field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <span>Requeste By</span>
+                        </div>
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <p>{employee.requestedBy}</p>
+                        </div>
+                        <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <span>Requeste Date</span>
+                        </div>
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <p>{employee.requestedDate}</p>
+                        </div>
+                        <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <span>Vendor Name</span>
+                        </div>
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <p>{employee.vendorName}</p>
+                        </div>
+                        <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <span>Purpose</span>
+                        </div>
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <p>{employee.purpose}</p>
+                        </div>
+                        <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <span>Need By Date</span>
+                        </div>
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <p>{employee.needByDate}</p>
+                        </div>
+                        <div
+                            class="field field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <span>Requisition Form</span>
+                        </div>
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_9-of-12 slds-size_12-of-12">
+                            <p class="sldc_box">
+                                <lightning-icon icon-name="action:add_file" alternative-text="add_file" title="add_file"
+                                    size="xx-small"></lightning-icon>
+                            </p>
+                        </div>
+                        <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <span>Status</span>
+                        </div>
+
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <p style="color: green;">{employee.status}</p>
+                        </div>
+                        <div class="field slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <span>Submission Date</span>
+                        </div>
+                        <div class="slds-col slds-large-size_9-of-12 slds-medium-size_3-of-12 slds-size_12-of-12">
+                            <p>{employee.submissionDate}</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </template>
+
+        </template>
+    </ul>
+</template>
