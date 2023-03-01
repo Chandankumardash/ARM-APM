@@ -1,0 +1,144 @@
+<template>
+    <div class="profile-details mb-10">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-large-size_2-of-12  slds-medium-size_2-of-12 slds-size_12-of-12 text-center">
+                <div class="profile-icon">
+                    <lightning-icon icon-name="utility:user" size="large">
+                    </lightning-icon>
+                </div>
+                <p class="body4_regular description-body approve-status">
+                    <lightning-icon icon-name="utility:check" class="green-icon" size="x-small">
+                    </lightning-icon> Approved
+                </p>
+            </div>
+            <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_12-of-12">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12">
+                        <h3 class="name-header">Mark Otto</h3>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 text-right">
+                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue"
+                            size="x-small">
+                        </lightning-icon>
+                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue"
+                            size="x-small">
+                        </lightning-icon>
+                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue"
+                            size="x-small">
+                        </lightning-icon>
+                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue"
+                            size="x-small">
+                        </lightning-icon>
+                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue"
+                            size="x-small">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 mb-5">
+                        <span style="font-weight: 600;">Success Construction</span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 mb-5">
+                        <span>
+                            <lightning-icon icon-name="utility:case" alternative-text="Connected" size="x-small"
+                                title="x-small size">
+                            </lightning-icon> Electrician
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 text-right mb-5">
+                        <span>
+                            Onboarding Date: <b>Jun 28 2020</b>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 mb-5">
+                        <lightning-icon icon-name="utility:checkin" size="x-small">
+                        </lightning-icon> US-Colorado-Denver-Plant-Area2-Floor1-East
+                    </div>
+                    <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 mb-5">
+                        <lightning-icon icon-name="utility:call" alternative-text="Connected" size="x-small" title="x-small size">
+                        </lightning-icon> 888-555-1212
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu-card">
+        <ul class="ul-tab">
+            <template for:each={menus} for:item="menu">
+                <li  if:false={menu.condition} onclick={menu.command} key={menu.label}>{menu.label}</li>
+                <li if:true={menu.condition} class="tab-active" onclick={menu.command} key={menu.label}>{menu.label}</li>
+            </template>
+        </ul>
+    </div>
+    <div class="menu-card">
+        <template if:true={profilePage}>
+            <template for:each={profileData} for:item="profile">
+                <div key={profile.label} class="slds-grid slds-wrap">
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 mb-5">
+                        <b style="font-size:14px;">{profile.label} :</b>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12">
+                        {profile.value}
+                    </div>
+                </div>
+            </template>
+            <div class="slds-grid slds-wrap mt-5">
+                <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+                    <span class="table-head">Certification</span>
+                </div>
+                <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_2-of-12">
+                    <span></span>
+                </div>
+                <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_3-of-12">
+                    <span class="table-head">Organisation</span>
+                </div>
+                <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_3-of-12">
+                    <span class="table-head">Expiry Date</span>
+                </div>
+                <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+                    <span>Certified Electrical Safety Technician</span>
+                </div>
+                <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_2-of-12">
+                    <span style="color: green">Valid</span>
+                </div>
+                <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_3-of-12">
+                    <span>EPA</span>
+                </div>
+                <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_3-of-12">
+                    <span>3/25/2023</span>
+                </div>
+                <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_4-of-12">
+                    <span>Certified Electrician</span>
+                </div>
+                <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_2-of-12">
+                    <span style="color: green;">Valid</span>
+                </div>
+                <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_3-of-12">
+                    <span>ASPE</span>
+                </div>
+                <div class="slds-col slds-large-size_3-of-12 slds-medium-size_3-of-12 slds-size_3-of-12">
+                    <span>7/20/2025</span>
+                </div>
+            </div>
+        </template>
+        <template if:true={biodataPage}>
+            <template for:each={biodata} for:item="profile">
+                <div key={profile.label} class="slds-grid slds-wrap">
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 mb-5">
+                        <b style="font-size:14px;">{profile.label} :</b>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12">
+                        {profile.value}
+                    </div>
+                </div>
+            </template>
+        </template>
+        <template if:true={trainingPage}>
+            trainingPage
+        </template>
+        <template if:true={workOrderPage}>
+            workOrderPage
+        </template>
+        <template if:true={observationPage}>
+            observationPage
+        </template>
+    </div>
+</template>
