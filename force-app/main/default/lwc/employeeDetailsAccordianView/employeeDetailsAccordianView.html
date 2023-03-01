@@ -1,0 +1,106 @@
+<template>
+    <div class="profile-details mb-10">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-large-size_2-of-12  slds-medium-size_2-of-12 slds-size_12-of-12 text-center">
+                <div class="profile-icon">
+                    <lightning-icon icon-name="utility:user" size="large">
+                    </lightning-icon>
+                </div>
+                <p class="body4_regular description-body approve-status">
+                    <lightning-icon icon-name="utility:check" class="green-icon" size="x-small">
+                    </lightning-icon> Approved
+                </p>
+            </div>
+            <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_12-of-12">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12">
+                        <h3 class="name-header">Mark Otto</h3>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 text-right">
+                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected"
+                            class="star-icon-blue" size="x-small">
+                        </lightning-icon>
+                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected"
+                            class="star-icon-blue" size="x-small">
+                        </lightning-icon>
+                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected"
+                            class="star-icon-blue" size="x-small">
+                        </lightning-icon>
+                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected"
+                            class="star-icon-blue" size="x-small">
+                        </lightning-icon>
+                        <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected"
+                            class="star-icon-blue" size="x-small">
+                        </lightning-icon>
+                    </div>
+                    <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 mb-5">
+                        <span style="font-weight: 600;">Success Construction</span>
+                    </div>
+                    <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 mb-5">
+                        <span>
+                            <lightning-icon icon-name="utility:case" alternative-text="Connected" size="x-small"
+                                title="x-small size">
+                            </lightning-icon> Electrician
+                        </span>
+                    </div>
+                    <div
+                        class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 text-right mb-5">
+                        <span>
+                            Onboarding Date: <b>Jun 28 2020</b>
+                        </span>
+                    </div>
+                    <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 mb-5">
+                        <lightning-icon icon-name="utility:checkin" size="x-small">
+                        </lightning-icon> US-Colorado-Denver-Plant-Area2-Floor1-East
+                    </div>
+                    <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 mb-5">
+                        <lightning-icon icon-name="utility:call" alternative-text="Connected" size="x-small"
+                            title="x-small size">
+                        </lightning-icon> 888-555-1212
+                    </div>
+                </div>
+            </div>
+            <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12">
+                <div class="slds-grid slds-wrap text-center">
+                    <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                        <p class="body4_regular description-body approve-status">
+                            <lightning-icon icon-name="utility:check" class="green-icon" size="x-small">
+                            </lightning-icon> Driver MVR Report
+                        </p>
+                    </div>
+                    <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                        <p class="body4_regular description-body approve-status">
+                            <lightning-icon icon-name="utility:check" class="green-icon" size="x-small">
+                            </lightning-icon> Drug & Alcohol Report
+                        </p>
+                    </div>
+                    <div class="slds-col slds-large-size_1-of-3 slds-medium-size_1-of-3 slds-size_1-of-3">
+                        <p class="body4_regular description-body approve-status">
+                            <lightning-icon icon-name="utility:check" class="green-icon" size="x-small">
+                            </lightning-icon> Criminal Records Report
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="slds-card">
+        <lightning-accordion class="employee-accordion" onsectiontoggle={handleToggleSection} allow-multiple-sections-open
+        active-section-name={activeSections}>
+            <template for:each={menus} for:item='menu'>
+                <lightning-accordion-section key={menu.name} name={menu.value} label={menu.name}>
+                    <template for:each={menu.data} for:item='data'>
+                        <div key={data.label} class="slds-grid slds-wrap" style="margin-left: 20px;">
+                            <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12 mb-5">
+                                <b style="font-size:14px;">{data.label} :</b>
+                            </div>
+                            <div class="slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_6-of-12">
+                                {data.value}
+                            </div>
+                        </div>
+                    </template>
+                </lightning-accordion-section>
+            </template>
+        </lightning-accordion>
+    </div>
+</template>
