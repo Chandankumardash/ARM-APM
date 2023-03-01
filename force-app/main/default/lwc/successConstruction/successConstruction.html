@@ -1,0 +1,62 @@
+<template>
+    <template for:each={profiles} for:item="profile">
+        <article class="slds-card" key={profile.id} style="width: 600px; border: solid;
+        border-width: 3px;
+        border-color:rgba(1, 118, 211, 1);border-radius: 11px;">
+            <div class="slds-grid slds-wrap" style="display:flex; align-items: center; margin-left: 30px; margin-top: 15px;">
+
+                <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_12-of-12" style="margin-bottom: 5px;">
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col slds-large-size_6-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                            <h3 class="employee-card-title"></h3>
+                            <span>
+                                <h3 class="employee-card-title" style="font-weight: 700;color:rgba(1, 118, 211, 1) ;">{profile.heading}</h3>
+                            </span>
+                        </div>
+                        <div class="slds-col slds-large-size_6-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                          
+                             <h3 style="font-weight: 700;color:rgba(1, 118, 211, 1) ; text-align: right;">ID: {profile.Id}</h3>
+                           
+                        </div>
+                    </div>
+                    <hr style="margin: unset;border-width: 12px;
+                    border-block-color:rgba(1, 118, 211, 1);">
+                    <div class="slds-grid slds-wrap" style="margin-top: 5px;">
+                        <div class="slds-col slds-large-size_3-of-12 slds-medium-size_4-of-12 slds-size_12-of-12" style="margin-top: 5px;">
+                            <h3 class="employee-card-title"></h3>
+                            <span>
+                                <lightning-icon icon-name="action:user" alternative-text="Approved" title="Approved"
+                        size="large"></lightning-icon>
+                
+                            </span>
+                        </div>
+                        <div class="slds-col slds-large-size_5-of-12 slds-medium-size_4-of-12 slds-size_12-of-12" style="margin-right: 10px;">
+                            <h3 class="employee-card-title"></h3>
+                                <h1 style="font-weight: 900;">{profile.name}</h1>
+                            <div>
+                              {profile.occupation}
+                            </div>
+                            <div>
+                                 Badge# : {profile.badge}
+                            </div>
+                            <div>
+                                   Validity:
+                            </div>
+                            <div>
+                               {profile.validity}
+                            </div>
+                            <div>Entry Gate:</div>
+                            <div>{profile.entry_gate}</div>
+
+                        </div>
+                        <div class="slds-col slds-large-size_3-of-12 slds-medium-size_4-of-12 slds-size_12-of-12" style="margin-right: 10px;">  
+                            <lightning-barcode-scanner icon-size="large"> </lightning-barcode-scanner>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+    </article>
+    </template>
+</template>

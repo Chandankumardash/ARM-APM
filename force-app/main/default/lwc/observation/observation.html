@@ -1,0 +1,86 @@
+<template>
+    <div class="slds-grid slds-wrap" style="display:flex; align-items: center; ">
+        <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 ">
+            <div class="slds-grid slds-wrap">
+                <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 ">
+                    <lightning-combobox
+                        name="progress"
+                        value={value}
+                        label="Who is being Observed?"
+                        placeholder="Name"
+                        options={observed}
+      a                  onchange={handleChange} >
+                    </lightning-combobox>
+                </div>
+                <div class="slds-col slds-large-size_12-of-12 slds-medium-size_4-of-12 slds-size_12-of-12">
+                    <div>
+                        <h2 style="margin-top: 5px;">Type of Observation(Choose One)</h2>
+                        <div class="slds-button-group" role="group">
+                            <button class="slds-button slds-button_neutral"
+                                style="background-color: blue;color: white;">None</button>
+                            <button class="slds-button slds-button_neutral">Unsafe Action</button>
+                            <button class="slds-button slds-button_neutral">Unsafe Condition</button>
+                            <button class="slds-button slds-button_neutral">Safe Behaviour</button>
+                        </div>
+                 </div>
+                    <div>
+                       <h2 style="margin-top: 5px;">Describe Your Observation</h2>
+                         <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <textarea id="textarea-id-01" placeholder="Describe" class="slds-textarea"></textarea>
+                            </div>
+                    </div>
+                 </div>
+                    <div>
+                        <h2 style="margin-top: 5px;">Did You Take Any Action to Remediate the Hazard?</h2>
+
+                        <div class="slds-button-group" role="group">
+                            <button class="slds-button slds-button_neutral"
+                                style="background-color: blue;color: white;">None</button>
+                            <button class="slds-button slds-button_neutral">Yes</button>
+                            <button class="slds-button slds-button_neutral">No</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2 style="margin-top: 5px;">If so , Describe</h2>
+
+                        <div class="slds-form-element">
+                            <div class="slds-form-element__control">
+                                <textarea id="textarea-id-02" placeholder="Describe" class="slds-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 style="margin-top: 5px;">Urgency of Situation(Choose one)</h2>
+
+                        <div class="slds-button-group" role="group">
+                            <button class="slds-button slds-button_neutral"
+                                style="background-color: blue;color: white;">None</button>
+                            <button class="slds-button slds-button_neutral">Low</button>
+                            <button class="slds-button slds-button_neutral">Medium</button>
+                            <button class="slds-button slds-button_neutral">High</button>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12 ">
+                        <h2> Observed by?</h2>
+                        <lightning-combobox
+                            name="progress"
+                            value={value}
+                            placeholder="Name"
+                            options={observed}
+                            onchange={handleChange} >
+                        </lightning-combobox>
+                    </div>
+                    <div class="field slds-col slds-large-size_6-of-12 slds-medium-size_6-of-12 slds-size_12-of-12 " style="margin-top: 6px; width: 100%;">
+                        <button class="slds-button slds-button_brand " style="float: right;">View</button>
+                        <button class="slds-button slds-button_outline-brand p-mx-05"  style="float: right;  margin-right: 4px">Cancel</button>
+                    </div>
+                           
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

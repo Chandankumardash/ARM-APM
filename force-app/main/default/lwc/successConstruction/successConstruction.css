@@ -1,0 +1,16 @@
+.card-details {
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #ebedf1;
+    position: relative;
+    text-align: center;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    height: 100px;
+    margin: 07px;
+    box-shadow: 0px 10px 5px lightblue;
+}
+.slds-card {
+    width: 600px;
+    
+}
