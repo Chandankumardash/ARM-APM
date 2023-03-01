@@ -37,22 +37,27 @@
             <li key={safetydata.id}>
 
                 <div class="slds-grid slds-wrap">
-                    <div class="slds-col slds-size_8-of-12 slds-medium-size_8-of-12">
+                    <div class="slds-col slds-large-size_6-of-12 slds-size_6-of-12 slds-medium-size_12-of-12">
                         <h3 class="contract-card-title">{safetydata.name}</h3>
+                        <p class="mt-5">{safetydata.instrumentType}</p>
+                        <p class="mt-5">Type: <b>{safetydata.type}</b></p>
                     </div>
-                    <div class="slds-col slds-size_2-of-12 slds-medium-size_2-of-12">
-                        <span ><b>{safetydata.id}</b></span>
+                    <div class="slds-col slds-large-size_6-of-12 slds-size_6-of-12 slds-medium-size_12-of-12 " style="text-align: right;">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-large-size_4-of-12 slds-size_4-of-12 slds-medium-size_5-of-12">
+                                <lightning-badge label={safetydata.id} class="badge-semi-light-black mt-10"></lightning-badge>
+                            </div>
+                            <div class="slds-col slds-large-size_8-of-12 slds-size_8-of-12 slds-medium-size_7-of-12">
+                                <p>{safetydata.date}</p>
+                            </div>
+                        </div>
+                        <p ><b>{safetydata.person}</b></p>
+                        <p style="color: green" class="mt-5"><b>{safetydata.status}</b>
+                        </p>
                     </div>
-                    <div class="slds-col slds-size_2-of-12 slds-medium-size_2-of-12">
-                        <span ><b>{safetydata.date}</b>
-                        </span>
-                    </div>
-                </div>
-                <div class="slds-grid slds-wrap">
-                    <div class="slds-col slds-size_8-of-12 slds-medium-size_10-of-12">
-                        <h4>{safetydata.instrumentType}</h4>
-                    </div>
-                    <div class="slds-col slds-size_2-of-12 slds-medium-size_2-of-12">
+                
+                    
+                    <!-- <div class="slds-col slds-size_2-of-12 slds-medium-size_2-of-12">
                         <span ><b>{safetydata.person}</b></span>
                     </div>
                 </div>
@@ -65,6 +70,7 @@
                         <span style="color: green"><b>{safetydata.status}</b>
                         </span>
                     </div>
+                </div> -->
                 </div>
                   
                 <!-- <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;" onclick={nextPage}>

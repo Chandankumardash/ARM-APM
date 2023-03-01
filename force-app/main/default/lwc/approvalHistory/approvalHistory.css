@@ -1,0 +1,23 @@
+.sldc_box {
+    border-radius: 0%;
+}
+.version-list span{
+    display: contents;
+    float: left;
+    width: 100px;
+    text-align: right;
+    min-height: auto;
+    background-color: white;
+}
+.version-list h3{
+    display: block;
+    float: left;
+    width: 100px;
+    text-align: right;
+}
+.alignMe span::after{
+    content: ":";
+    position: absolute;
+    padding-right: 1em;
+    vertical-align: middle;
+}

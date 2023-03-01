@@ -1,0 +1,23 @@
+<template>
+    <div onclick={handelAlertsBack} style="font-size: x-large;">
+        <lightning-icon icon-name="utility:back" size="x-medium" style="margin: 10px;"></lightning-icon> 
+        <span>Alerts</span>
+    </div>
+    <ul class="version-list">
+        <template for:each={alerts} for:item="alert">
+            <li key={workHistory.Id} >
+                <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;">
+                    <div class="slds-col slds-large-size_10-of-12 slds-medium-size_10-of-12 slds-size_8-of-12" >
+                        <h3 class="workHistory-card-title">{alerts.name}</h3>
+                        <p class="mt-10">Summery: {alerts.summery}</p>
+                    </div>
+                    <div class="slds-col slds-large-size_2-of-12 slds-medium-size_2-of-12 slds-size_4-of-12 text-right" >
+                        <div>
+                            <p>{alerts.date}</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </ul>
+</template>

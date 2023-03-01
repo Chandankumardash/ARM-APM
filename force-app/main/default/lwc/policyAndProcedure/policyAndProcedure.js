@@ -6,7 +6,7 @@ export default class PolicyAndProcedure extends LightningElement {
     policies = [
         {
             "Id": "1231", 
-            "name": "memorandum of Understanding and Policy Compliances",
+            "name": "Memorandum of Understanding and Policy Compliances",
             "lastUpload": "10/13/2022",
             "nextUpload": "10/04/2023",
             "overdue": false,

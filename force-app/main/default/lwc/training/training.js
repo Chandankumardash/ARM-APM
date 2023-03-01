@@ -45,7 +45,7 @@ export default class Training extends LightningElement {
         },
     ]
 
-    handelTrainings(){
+    handelTrainingBack(){
         this.dispatchEvent(new CustomEvent('click', {detail: "back"}));
     }
 }

@@ -1,0 +1,62 @@
+<template>
+    <ul class="version-list">
+        <template for:each={employees} for:item="employee">
+            <li key={employee.Id} class="slds-m-right_none">
+                <div class="slds-grid slds-wrap" style="display:flex; align-items: center;" onclick={nextPage}>
+                     <div class="slds-col slds-large-size_12-of-12 slds-medium-size_12-of-12 slds-size_12-of-12">
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12" >
+                                <h3 class="employee-card-title" style="font-size:medium;font-weight: 600;">{employee.name}</h3>
+                                <span> <h3 class="employee-card-title">{employee.desc}</h3>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12 star-rating" >
+                                <span>
+                                <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
+                                </lightning-icon>
+                                <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
+                                </lightning-icon>
+                                <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
+                                </lightning-icon>
+                                <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
+                                </lightning-icon>
+                                <lightning-icon icon-name="utility:favorite" alternative-text="Connected" title="Connected" class="star-icon-blue" size="small">
+                                </lightning-icon>
+                            </span>
+                            </div>
+                            <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12 text-right" >
+                                <span style="font-weight: 400;"> <h3 style="text-align: end; " >{employee.date}</h3></span> 
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-wrap">
+                            <div class="slds-col slds-large-size_7-of-12 slds-medium-size_7-of-12 slds-size_12-of-12" >
+
+                                    <span> <h3 class="employee-card-title" >End Date: {employee.endDate}</h3>
+                                    </span>
+                               <span> 
+                                     <p class="approved-label text-green" style="font-size: 14px;">
+                                        <span  style="color: green;">
+                                            <lightning-icon
+                                            icon-name="utility:check"  size="x-small" style="color: green;" >
+                                        </lightning-icon> {employee.workStatus} 
+                                    </span>   
+                                  </p>
+                                </span>
+                               
+                            </div>
+                            <div class="slds-col slds-large-size_5-of-12 slds-medium-size_5-of-12 slds-size_12-of-12" style="text-align: end;">
+                                    <span> <i> <h3 class="employee-card-titles " >{employee.reporting}</h3></i>
+                                    </span>
+                                    
+                                    <span style="margin-top: 5;"> <button class="slds-button slds-button_outline-brand  p-mx-05 ">CheckIn/Out History</button>
+                                    </span>
+                            </div>
+                           
+                        </div>
+                        
+                    </div> 
+                </div>
+            </li>
+        </template>
+    </ul>
+</template>

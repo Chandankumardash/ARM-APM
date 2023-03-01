@@ -1,0 +1,25 @@
+<template>
+    <ul class="version-list">
+        <template for:each={observations} for:item="observation">
+            <li key={observations.Id} class="slds-m-right_none">
+                <div class="slds-grid slds-wrap" style="display:flex; justify-content: center; align-items: center;"
+                    onclick={nextPage}>
+
+                    <div class="slds-col slds-large-size_8-of-12 slds-medium-size_8-of-12 slds-size_12-of-12">
+                        <h3 class="contract-card-title">{observation.name}</h3>
+                        <p class="mt-10" style="color:grey"><span>WO: </span>{observation.wo}</p>
+                        <p class="mt-10"><i style="color:grey">Observed By: {observation.observed}</i> </p>
+                        <p class="mt-10"><span style="color:grey">Type of Observation: </span> <b>{observation.type}</b>
+                        </p>
+
+                    </div>
+                    <div class="slds-col slds-large-size_4-of-12 slds-medium-size_4-of-12 slds-size_12-of-12 text-right">
+                        <p class="mt-10 date" style="color:grey">{observation.date}</p>
+                        <p class="mt-10 situation" >Urgency of Situation: <b>{observation.situation}</b>
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </template>
+    </ul>
+</template>
