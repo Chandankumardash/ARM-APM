@@ -115,40 +115,52 @@ export default class EmployeeDetails extends LightningElement {
         {
             label: 'Age',
             value: '32'
-        }, {
+        }, 
+        {
             label: 'Weight',
             value: '64 kg'
-        }, {
+        }, 
+        {
             label: 'Height',
             value: '5.9"'
-        }, {
+        }, 
+        {
             label: 'Blood Group',
             value: 'O +ve'
-        }, {
+        }, 
+        {
             label: 'Language',
             value: 'English'
-        }, {
+        }, 
+        {
             label: 'Mobile',
             value: '888-555-1212'
-        }, {
+        }, 
+        {
             label: 'Email ID',
             value: 'mark.otto@gmail.com'
-        }, {
+        }, 
+        {
             label: 'Street',
             value: '3980 Broadway St'
-        }, {
+        }, 
+        {
             label: 'City/Town',
             value: 'Boulder'
-        }, {
+        }, 
+        {
             label: 'State/Province/Region',
             value: 'Colorado'
-        }, {
+        }, 
+        {
             label: 'Country',
             value: 'United States'
-        }, {
+        }, 
+        {
             label: 'Nationality',
             value: 'American'
-        }, {
+        }, 
+        {
             label: 'Passport Type',
             value: 'Regular'
         }
